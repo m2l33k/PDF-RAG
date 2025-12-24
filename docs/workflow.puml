@@ -1,0 +1,61 @@
+@startuml
+title PDF RAG Project Workflow
+
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam activity {
+  BackgroundColor #F7F7F7
+  BorderColor #444444
+}
+
+partition "Build Vector Store (Notebook)" {
+  start
+  :Collect PDFs\n`data non traite/`;
+  :Read PDFs page-by-page\n(`pypdf`);
+  :Clean text and metadata\n(source, page);
+  :Chunk text\n(chunk_size, chunk_overlap);
+  :Embed chunks\n(`sentence-transformers`);
+  :Build FAISS index\n(`faiss-cpu`);
+  :Write store to disk\n`vector_store/`\n- `chunks.faiss`\n- `chunks.json`\n- `store_config.json`;
+  stop
+}
+
+partition "Ask / Quiz (Streamlit App)" {
+  start
+  :User opens Streamlit UI\n`app.py`;
+  :Load store from `vector_store/`;
+  :Load embedding model\n(from `store_config.json`);
+
+  if ("Ask tab?") then (yes)
+    :User question;
+    :Embed question;
+    :Retrieve top_k chunks\nfrom FAISS;
+    :Build prompt with contexts;
+    :Call GitHub Models\n`/chat/completions`;
+    :Answer shown in UI\n+ sources list;
+  else (Quiz tab)
+    if ("Topic provided?") then (yes)
+      :Retrieve contexts for topic;
+    else (no)
+      :Sample random contexts\n(optionally filtered by PDF);
+    endif
+    :Build quiz prompt;
+    :Call GitHub Models\n`/chat/completions`;
+    :Parse quiz JSON;
+    :Render quiz + grading\nin UI;
+  endif
+  stop
+}
+
+partition "Evaluation (Offline)" {
+  start
+  :Load store from `vector_store*/`;
+  :Load eval set\n`eval/questions.csv`\n(question, relevant_sources);
+  :For each question:\nretrieve top_k chunks;
+  :Compute metrics\nMRR, Precision@k, Recall@k;
+  :Sweep threshold\nfor confusion matrix;
+  :Save plots + CSVs\n`reports/`:\nROC/PR, confusion matrix,\nper-query metrics, detailed hits;
+  stop
+}
+
+@enduml

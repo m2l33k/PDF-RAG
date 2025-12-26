@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 import os
 import random
+import subprocess
+import sys
 import time
 from pathlib import Path
 from typing import Any
@@ -20,6 +22,24 @@ STORE_DIR = PROJECT_DIR / "vector_store"
 GITHUB_ENDPOINT = "https://models.github.ai/inference"
 GITHUB_MODELS_URL = f"{GITHUB_ENDPOINT}/chat/completions"
 GITHUB_MODEL_DEFAULT = "meta/Llama-3.3-70B-Instruct"
+API_HOST = "localhost"
+API_DEFAULT_PORT = 8502
+
+
+def get_api_base_url() -> str:
+    port = int(st.session_state.get("api_port", API_DEFAULT_PORT))
+    return f"http://{API_HOST}:{port}"
+
+
+def api_health(base_url: str) -> tuple[bool, bool]:
+    try:
+        r = requests.get(f"{base_url}/health", timeout=0.5)
+        if not r.ok:
+            return False, False
+        data = r.json()
+        return True, bool(data.get("has_token"))
+    except Exception:
+        return False, False
 
 
 def load_store(store_dir: Path) -> tuple[faiss.Index, list[dict[str, Any]], dict[str, Any]]:
@@ -186,89 +206,6 @@ def dedupe_hits_by_source(hits: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
-st.set_page_config(page_title="PDF RAG", layout="wide")
-st.title("PDF RAG (FAISS + Generator)")
-
-if not (STORE_DIR / "chunks.faiss").exists():
-    st.error("Missing `vector_store/`. Run `pdf_rag_pipeline.ipynb` to build it first.")
-    st.stop()
-
-idx, meta, cfg = get_store()
-embed_model = get_embed_model(cfg["embedding_model"])
-
-all_sources = sorted({str(m.get("source", "")) for m in meta if m.get("source")})
-
-with st.sidebar:
-    st.subheader("Settings")
-    language = st.selectbox("Answer language", ["English", "Français", "العربية"], index=0)
-    top_k = st.slider("top_k", min_value=1, max_value=12, value=6, step=1)
-    use_reranker = st.checkbox("Use re-ranker (cross-encoder)", value=False)
-    candidate_k = st.slider("candidate_k", min_value=top_k, max_value=30, value=max(int(top_k), 10), step=1)
-    reranker_model = st.text_input("Re-ranker model", value="cross-encoder/ms-marco-MiniLM-L-6-v2")
-    filter_rerank = st.checkbox("Filter re-ranked hits by score", value=False)
-    min_rerank_score = st.number_input("Min re-rank score", value=-1.0, step=0.1, disabled=not bool(filter_rerank))
-    temperature = st.slider("temperature", min_value=0.0, max_value=1.0, value=0.2, step=0.05)
-    timeout_s = st.number_input("timeout (seconds)", min_value=30, max_value=600, value=300, step=10)
-    github_model = st.text_input("GitHub model", value=GITHUB_MODEL_DEFAULT)
-    max_tokens = st.number_input("max_tokens", min_value=32, max_value=2048, value=512, step=32)
-
-tab_ask, tab_quiz = st.tabs(["Ask", "Quiz"])
-
-with tab_ask:
-    question = st.text_input("Question", value="", placeholder="Ask something about your PDFs...")
-    col1, col2 = st.columns([1, 1])
-    with col1:
-        ask = st.button("Ask", type="primary")
-    with col2:
-        st.write(f"GPU: {torch.cuda.is_available()}")
-
-    if ask:
-        q = question.strip()
-        if not q:
-            st.warning("Type a question first.")
-            st.stop()
-        with st.spinner("Retrieving context..."):
-            if bool(use_reranker):
-                ce = get_cross_encoder(reranker_model.strip())
-                base = retrieve(q, idx, meta, embed_model, top_k=int(candidate_k))
-                contexts = rerank_cross_encoder(q, base, ce)
-                if bool(filter_rerank):
-                    kept = [c for c in contexts if float(c.get("score", float("-inf"))) >= float(min_rerank_score)]
-                    contexts = kept if kept else contexts
-                contexts = dedupe_hits_by_source(contexts)
-                for r, c in enumerate(contexts):
-                    c["rank"] = int(r)
-                contexts = contexts[: int(top_k)]
-            else:
-                contexts = retrieve(q, idx, meta, embed_model, top_k=int(top_k))
-        with st.spinner("Generating answer..."):
-            token = get_github_token()
-            if not token:
-                st.error("Missing `GITHUB_TOKEN`. Set it as an environment variable or Streamlit secret.")
-                st.stop()
-            messages = build_messages(q, contexts, language)
-            answer = generate_text_github(
-                messages=messages,
-                model=github_model.strip(),
-                token=token,
-                temperature=float(temperature),
-                max_tokens=int(max_tokens),
-                timeout_s=int(timeout_s),
-            )
-
-        st.subheader("Answer")
-        st.write(answer)
-
-        st.subheader("Sources")
-        for c in contexts:
-            if "base_score" in c:
-                st.write(
-                    f"- {c['source']} (page {c['page']}, sim {float(c['base_score']):.3f}, rerank {float(c['score']):.3f})"
-                )
-            else:
-                st.write(f"- {c['source']} (page {c['page']}, score {c['score']:.3f})")
-
-
 def build_quiz_prompt(language: str, n_questions: int, difficulty: str, contexts: list[dict[str, Any]]) -> list[dict[str, str]]:
     max_context_chars = 6000
     parts: list[str] = []
@@ -357,97 +294,258 @@ def safe_load_json(text: str) -> dict[str, Any]:
         raise
 
 
-with tab_quiz:
-    st.subheader("Quiz Generator")
-    quiz_language = st.selectbox("Quiz language", ["English", "Français", "العربية"], index=0, key="quiz_language")
-    difficulty = st.selectbox("Difficulty", ["easy", "medium", "hard"], index=1)
-    n_questions = st.slider("Number of questions", min_value=3, max_value=15, value=8, step=1)
-    source_filter = st.multiselect("Limit to PDFs (optional)", options=all_sources)
-    topic = st.text_input("Topic (optional)", value="", placeholder="e.g. operating systems, databases, networking")
-    gen_quiz = st.button("Generate Quiz", type="primary")
+def ensure_api_running() -> subprocess.Popen[str] | None:
+    token = get_github_token()
 
-    if "quiz" not in st.session_state:
-        st.session_state["quiz"] = None
-        st.session_state["quiz_sources"] = None
+    base_url = get_api_base_url()
+    ok, has_token = api_health(base_url)
+    if ok and (has_token or not token):
+        return None
 
-    if gen_quiz:
-        token = get_github_token()
-        if not token:
-            st.error("Missing `GITHUB_TOKEN`. Set it as an environment variable or Streamlit secret.")
-            st.stop()
+    creationflags = 0
+    if os.name == "nt":
+        creationflags = subprocess.CREATE_NO_WINDOW
 
-        if topic.strip():
-            quiz_query = f"Create a quiz about: {topic.strip()}"
-            if bool(use_reranker):
-                ce = get_cross_encoder(reranker_model.strip())
-                base = retrieve(quiz_query, idx, meta, embed_model, top_k=max(int(candidate_k), 8))
-                base_contexts = rerank_cross_encoder(quiz_query, base, ce)[: max(8, int(top_k))]
-            else:
-                base_contexts = retrieve(quiz_query, idx, meta, embed_model, top_k=max(8, int(top_k)))
-        else:
-            rng = np.random.default_rng(7)
-            pool = [m for m in meta if m.get("chunk") and m.get("source")]
-            if source_filter:
-                pool = [m for m in pool if m.get("source") in set(source_filter)]
-            take = min(len(pool), max(8, int(top_k)))
-            picks = rng.choice(len(pool), size=take, replace=False) if take and len(pool) else []
-            base_contexts = [dict(pool[int(i)]) for i in picks]
-            for r, c in enumerate(base_contexts):
-                c["rank"] = r
-                c["score"] = float("nan")
+    env = os.environ.copy()
+    if not (env.get("GITHUB_TOKEN") or "").strip():
+        if token:
+            env["GITHUB_TOKEN"] = token
 
-        if source_filter:
-            base_contexts = [c for c in base_contexts if c.get("source") in set(source_filter)]
+    for port in range(API_DEFAULT_PORT, API_DEFAULT_PORT + 20):
+        candidate_url = f"http://{API_HOST}:{port}"
+        ok, has_token = api_health(candidate_url)
+        if ok:
+            if has_token or not token:
+                st.session_state["api_port"] = port
+                return None
+            continue
 
-        with st.spinner("Generating quiz..."):
-            messages = build_quiz_prompt(quiz_language, int(n_questions), difficulty, base_contexts)
-            raw = generate_text_github(
-                messages=messages,
-                model=github_model.strip(),
-                token=token,
-                temperature=float(temperature),
-                max_tokens=int(max_tokens),
-                timeout_s=int(timeout_s),
-            )
-            try:
-                quiz = safe_load_json(raw)
-            except Exception:
-                st.error("Quiz generation failed: model returned invalid JSON.")
-                st.text("Raw response:")
-                st.code(raw)
+        proc = subprocess.Popen(
+            [
+                sys.executable,
+                "-m",
+                "uvicorn",
+                "api:app",
+                "--host",
+                API_HOST,
+                "--port",
+                str(port),
+                "--log-level",
+                "warning",
+            ],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            creationflags=creationflags,
+        )
+        st.session_state["api_proc"] = proc
+        for _ in range(40):
+            ok, has_token = api_health(candidate_url)
+            if ok and (has_token or not token):
+                st.session_state["api_port"] = port
+                return proc
+            time.sleep(0.25)
+        return proc
+
+    return None
+
+
+def page_docs() -> None:
+    st.title("API Swagger Docs")
+    ensure_api_running()
+    base_url = get_api_base_url()
+    ok, has_token = api_health(base_url)
+    st.write(f"FastAPI base URL: `{base_url}`")
+    st.write(f"API ready: `{ok}` | Token detected by API: `{has_token}`")
+    st.components.v1.iframe(f"{base_url}/docs", height=900, scrolling=True)
+
+
+def page_app() -> None:
+    st.title("PDF RAG (FAISS + Generator)")
+
+    if not (STORE_DIR / "chunks.faiss").exists():
+        st.error("Missing `vector_store/`. Run `pdf_rag_pipeline.ipynb` to build it first.")
+        st.stop()
+
+    idx, meta, cfg = get_store()
+    embed_model = get_embed_model(cfg["embedding_model"])
+
+    all_sources = sorted({str(m.get("source", "")) for m in meta if m.get("source")})
+
+    with st.sidebar:
+        st.subheader("Settings")
+        language = st.selectbox("Answer language", ["English", "Français", "العربية"], index=0)
+        top_k = st.slider("top_k", min_value=1, max_value=12, value=6, step=1)
+        use_reranker = st.checkbox("Use re-ranker (cross-encoder)", value=False)
+        candidate_k = st.slider("candidate_k", min_value=top_k, max_value=30, value=max(int(top_k), 10), step=1)
+        reranker_model = st.text_input("Re-ranker model", value="cross-encoder/ms-marco-MiniLM-L-6-v2")
+        filter_rerank = st.checkbox("Filter re-ranked hits by score", value=False)
+        min_rerank_score = st.number_input(
+            "Min re-rank score", value=-1.0, step=0.1, disabled=not bool(filter_rerank)
+        )
+        temperature = st.slider("temperature", min_value=0.0, max_value=1.0, value=0.2, step=0.05)
+        timeout_s = st.number_input("timeout (seconds)", min_value=30, max_value=600, value=300, step=10)
+        github_model = st.text_input("GitHub model", value=GITHUB_MODEL_DEFAULT)
+        max_tokens = st.number_input("max_tokens", min_value=32, max_value=2048, value=512, step=32)
+
+    tab_ask, tab_quiz = st.tabs(["Ask", "Quiz"])
+
+    with tab_ask:
+        question = st.text_input("Question", value="", placeholder="Ask something about your PDFs...")
+        col1, col2 = st.columns([1, 1])
+        with col1:
+            ask = st.button("Ask", type="primary")
+        with col2:
+            st.write(f"GPU: {torch.cuda.is_available()}")
+
+        if ask:
+            q = question.strip()
+            if not q:
+                st.warning("Type a question first.")
                 st.stop()
-            st.session_state["quiz"] = quiz
-            st.session_state["quiz_sources"] = base_contexts
+            with st.spinner("Retrieving context..."):
+                if bool(use_reranker):
+                    ce = get_cross_encoder(reranker_model.strip())
+                    base = retrieve(q, idx, meta, embed_model, top_k=int(candidate_k))
+                    contexts = rerank_cross_encoder(q, base, ce)
+                    if bool(filter_rerank):
+                        kept = [c for c in contexts if float(c.get("score", float("-inf"))) >= float(min_rerank_score)]
+                        contexts = kept if kept else contexts
+                    contexts = dedupe_hits_by_source(contexts)
+                    for r, c in enumerate(contexts):
+                        c["rank"] = int(r)
+                    contexts = contexts[: int(top_k)]
+                else:
+                    contexts = retrieve(q, idx, meta, embed_model, top_k=int(top_k))
+            with st.spinner("Generating answer..."):
+                token = get_github_token()
+                if not token:
+                    st.error("Missing `GITHUB_TOKEN`. Set it as an environment variable or Streamlit secret.")
+                    st.stop()
+                messages = build_messages(q, contexts, language)
+                answer = generate_text_github(
+                    messages=messages,
+                    model=github_model.strip(),
+                    token=token,
+                    temperature=float(temperature),
+                    max_tokens=int(max_tokens),
+                    timeout_s=int(timeout_s),
+                )
 
-    quiz = st.session_state.get("quiz")
-    quiz_sources = st.session_state.get("quiz_sources")
-    if quiz and isinstance(quiz, dict) and isinstance(quiz.get("questions"), list):
-        questions = quiz["questions"]
-        st.write(f"Questions: {len(questions)}")
-        answers: list[int | None] = []
-        for i, q in enumerate(questions):
-            st.markdown(f"**Q{i+1}. {q.get('question','')}**")
-            choices = q.get("choices") or []
-            selected = st.radio(
-                label="",
-                options=list(range(len(choices))),
-                format_func=lambda idx: str(choices[idx]),
-                index=None,
-                key=f"quiz_q_{i}",
-            )
-            answers.append(selected)
-        submit = st.button("Submit Quiz")
-        if submit:
-            score = 0
-            for i, q in enumerate(questions):
-                correct = int(q.get("answer_index", -1))
-                if answers[i] is not None and int(answers[i]) == correct:
-                    score += 1
-            st.success(f"Score: {score}/{len(questions)}")
-            for i, q in enumerate(questions):
-                st.write(f"Q{i+1} explanation: {q.get('explanation','')}")
+            st.subheader("Answer")
+            st.write(answer)
 
-        if quiz_sources:
-            st.subheader("Material Sources Used")
-            for c in quiz_sources:
-                st.write(f"- {c['source']} (page {c['page']})")
+            st.subheader("Sources")
+            for c in contexts:
+                if "base_score" in c:
+                    st.write(
+                        f"- {c['source']} (page {c['page']}, sim {float(c['base_score']):.3f}, rerank {float(c['score']):.3f})"
+                    )
+                else:
+                    st.write(f"- {c['source']} (page {c['page']}, score {c['score']:.3f})")
+
+    with tab_quiz:
+        st.subheader("Quiz Generator")
+        quiz_language = st.selectbox("Quiz language", ["English", "Français", "العربية"], index=0, key="quiz_language")
+        difficulty = st.selectbox("Difficulty", ["easy", "medium", "hard"], index=1)
+        n_questions = st.slider("Number of questions", min_value=3, max_value=15, value=8, step=1)
+        source_filter = st.multiselect("Limit to PDFs (optional)", options=all_sources)
+        topic = st.text_input("Topic (optional)", value="", placeholder="e.g. operating systems, databases, networking")
+        gen_quiz = st.button("Generate Quiz", type="primary")
+
+        if "quiz" not in st.session_state:
+            st.session_state["quiz"] = None
+            st.session_state["quiz_sources"] = None
+
+        if gen_quiz:
+            token = get_github_token()
+            if not token:
+                st.error("Missing `GITHUB_TOKEN`. Set it as an environment variable or Streamlit secret.")
+                st.stop()
+
+            if topic.strip():
+                quiz_query = f"Create a quiz about: {topic.strip()}"
+                if bool(use_reranker):
+                    ce = get_cross_encoder(reranker_model.strip())
+                    base = retrieve(quiz_query, idx, meta, embed_model, top_k=max(int(candidate_k), 8))
+                    base_contexts = rerank_cross_encoder(quiz_query, base, ce)[: max(8, int(top_k))]
+                else:
+                    base_contexts = retrieve(quiz_query, idx, meta, embed_model, top_k=max(8, int(top_k)))
+            else:
+                rng = np.random.default_rng(7)
+                pool = [m for m in meta if m.get("chunk") and m.get("source")]
+                if source_filter:
+                    pool = [m for m in pool if m.get("source") in set(source_filter)]
+                take = min(len(pool), max(8, int(top_k)))
+                picks = rng.choice(len(pool), size=take, replace=False) if take and len(pool) else []
+                base_contexts = [dict(pool[int(i)]) for i in picks]
+                for r, c in enumerate(base_contexts):
+                    c["rank"] = r
+                    c["score"] = float("nan")
+
+            if source_filter:
+                base_contexts = [c for c in base_contexts if c.get("source") in set(source_filter)]
+
+            with st.spinner("Generating quiz..."):
+                messages = build_quiz_prompt(quiz_language, int(n_questions), difficulty, base_contexts)
+                raw = generate_text_github(
+                    messages=messages,
+                    model=github_model.strip(),
+                    token=token,
+                    temperature=float(temperature),
+                    max_tokens=int(max_tokens),
+                    timeout_s=int(timeout_s),
+                )
+                try:
+                    quiz = safe_load_json(raw)
+                except Exception:
+                    st.error("Quiz generation failed: model returned invalid JSON.")
+                    st.text("Raw response:")
+                    st.code(raw)
+                    st.stop()
+                st.session_state["quiz"] = quiz
+                st.session_state["quiz_sources"] = base_contexts
+
+        quiz = st.session_state.get("quiz")
+        quiz_sources = st.session_state.get("quiz_sources")
+        if quiz and isinstance(quiz, dict) and isinstance(quiz.get("questions"), list):
+            questions = quiz["questions"]
+            st.write(f"Questions: {len(questions)}")
+            answers: list[int | None] = []
+            for i, q in enumerate(questions):
+                st.markdown(f"**Q{i+1}. {q.get('question','')}**")
+                choices = q.get("choices") or []
+                selected = st.radio(
+                    label="",
+                    options=list(range(len(choices))),
+                    format_func=lambda idx: str(choices[idx]),
+                    index=None,
+                    key=f"quiz_q_{i}",
+                )
+                answers.append(selected)
+            submit = st.button("Submit Quiz")
+            if submit:
+                score = 0
+                for i, q in enumerate(questions):
+                    correct = int(q.get("answer_index", -1))
+                    if answers[i] is not None and int(answers[i]) == correct:
+                        score += 1
+                st.success(f"Score: {score}/{len(questions)}")
+                for i, q in enumerate(questions):
+                    st.write(f"Q{i+1} explanation: {q.get('explanation','')}")
+
+            if quiz_sources:
+                st.subheader("Material Sources Used")
+                for c in quiz_sources:
+                    st.write(f"- {c['source']} (page {c['page']})")
+
+
+st.set_page_config(page_title="PDF RAG", layout="wide")
+pg = st.navigation(
+    [
+        st.Page(page_app, title="App", url_path="", default=True),
+        st.Page(page_docs, title="Docs", url_path="docs"),
+    ]
+)
+pg.run()

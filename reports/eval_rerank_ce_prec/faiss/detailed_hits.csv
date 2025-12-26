@@ -1,0 +1,1201 @@
+query_id,question,hit_rank,hit_score,hit_source,hit_page,is_relevant
+0,What is developer?,0,0.937506377696991,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,133,0
+0,What is developer?,1,0.2469329535961151,Introduction_To_Computer_Science_-_WEB.pdf,448,1
+0,What is developer?,2,-2.6317873001098633,Introduction_To_Computer_Science_-_WEB.pdf,492,1
+0,What is developer?,3,-2.6832168102264404,Introduction_To_Computer_Science_-_WEB.pdf,448,1
+0,What is developer?,4,-3.1840226650238037,Introduction_To_Computer_Science_-_WEB.pdf,467,1
+0,What is developer?,5,-3.5594594478607178,Software Engineering at Google.pdf,595,0
+1,Define cloud.,0,6.439076900482178,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,55,0
+1,Define cloud.,1,5.142050266265869,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,268,0
+1,Define cloud.,2,2.482058525085449,Introduction_To_Computer_Science_-_WEB.pdf,700,1
+1,Define cloud.,3,2.10813045501709,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,56,0
+1,Define cloud.,4,1.7590367794036865,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,292,0
+1,Define cloud.,5,1.5898503065109253,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,265,0
+2,Explain iaas.,0,5.563393592834473,Introduction_To_Computer_Science_-_WEB.pdf,702,1
+2,Explain iaas.,1,3.3701038360595703,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,271,0
+2,Explain iaas.,2,2.5965423583984375,Introduction_To_Computer_Science_-_WEB.pdf,817,1
+2,Explain iaas.,3,2.4634504318237305,Introduction_To_Computer_Science_-_WEB.pdf,784,1
+2,Explain iaas.,4,2.138608694076538,Introduction_To_Computer_Science_-_WEB.pdf,776,1
+2,Explain iaas.,5,1.425190806388855,Introduction_To_Computer_Science_-_WEB.pdf,705,1
+3,How does offering work?,0,-5.317188262939453,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,68,1
+3,How does offering work?,1,-6.722809314727783,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,68,1
+3,How does offering work?,2,-6.774064064025879,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,277,1
+3,How does offering work?,3,-6.800429821014404,Cracking the coding interview 6th edition.pdf,607,0
+3,How does offering work?,4,-6.800429821014404,Cracking the coding interview 6th edition-1.pdf,607,0
+3,How does offering work?,5,-7.945842266082764,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,68,1
+4,Why is actual important?,0,0.06334042549133301,College_Success_-_WEB_zQGCJTr.pdf,155,0
+4,Why is actual important?,1,-3.0247552394866943,Software Engineering at Google.pdf,146,0
+4,Why is actual important?,2,-3.0247552394866943,Software Engineering at Google-1.pdf,146,0
+4,Why is actual important?,3,-3.2367818355560303,College_Success_Concise.pdf,55,0
+4,Why is actual important?,4,-3.9102063179016113,College_Success_-_WEB_zQGCJTr.pdf,413,0
+4,Why is actual important?,5,-5.361830711364746,College_Success_Concise.pdf,52,0
+5,What problem does products solve?,0,4.223842144012451,Software Engineering at Google.pdf,365,0
+5,What problem does products solve?,1,4.223842144012451,Software Engineering at Google-1.pdf,365,0
+5,What problem does products solve?,2,2.2198245525360107,College_Success_-_WEB_zQGCJTr.pdf,227,0
+5,What problem does products solve?,3,0.6038938760757446,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,145,1
+5,What problem does products solve?,4,-0.5679599046707153,Software Engineering at Google-1.pdf,99,0
+5,What problem does products solve?,5,-0.5679599046707153,Software Engineering at Google.pdf,99,0
+6,When would you use insert?,0,1.059092402458191,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,155,1
+6,When would you use insert?,1,-0.6556808948516846,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,336,1
+6,When would you use insert?,2,-0.759489893913269,SQL Tutorial.pdf,58,0
+6,When would you use insert?,3,-1.318077564239502,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,131,1
+6,When would you use insert?,4,-1.631495475769043,SQL Tutorial.pdf,119,0
+6,When would you use insert?,5,-3.13254976272583,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,692,1
+7,What is the relationship between numbers and the rest of the topic?,0,-7.125273704528809,Competitive Programmer_s Handbook.pdf,207,0
+7,What is the relationship between numbers and the rest of the topic?,1,-8.609246253967285,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,760,1
+7,What is the relationship between numbers and the rest of the topic?,2,-9.51415729522705,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,758,1
+7,What is the relationship between numbers and the rest of the topic?,3,-9.560491561889648,College_Success_-_WEB_zQGCJTr.pdf,63,0
+7,What is the relationship between numbers and the rest of the topic?,4,-9.664984703063965,Introduction_To_Computer_Science_-_WEB.pdf,221,0
+7,What is the relationship between numbers and the rest of the topic?,5,-9.87282943725586,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,758,1
+8,What is detail?,0,-1.677706003189087,Introduction_To_Computer_Science_-_WEB.pdf,466,0
+8,What is detail?,1,-2.623352527618408,Introduction_To_Computer_Science_-_WEB.pdf,74,0
+8,What is detail?,2,-5.713476657867432,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,552,1
+8,What is detail?,3,-6.396009922027588,College_Success_Concise.pdf,89,0
+8,What is detail?,4,-6.412952423095703,Preparing-for-College-Success-WEB_s0m0YMs.pdf,127,0
+8,What is detail?,5,-6.966970443725586,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,51,0
+9,Define join.,0,2.933795213699341,SQL Tutorial.pdf,92,0
+9,Define join.,1,2.4516477584838867,Introduction_To_Computer_Science_-_WEB.pdf,392,0
+9,Define join.,2,1.6779029369354248,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,902,0
+9,Define join.,3,0.7581112384796143,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,903,0
+9,Define join.,4,-0.9535214304924011,SQL Tutorial.pdf,92,0
+9,Define join.,5,-1.3414173126220703,Introduction_To_Computer_Science_-_WEB.pdf,392,0
+10,Explain pepsi.,0,-2.1074843406677246,Cracking the coding interview 6th edition.pdf,455,0
+10,Explain pepsi.,1,-2.1074843406677246,Cracking the coding interview 6th edition-1.pdf,455,1
+10,Explain pepsi.,2,-7.853975296020508,College_Success_-_WEB_zQGCJTr.pdf,350,0
+10,Explain pepsi.,3,-9.913297653198242,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,66,0
+10,Explain pepsi.,4,-10.095706939697266,Preparing-for-College-Success-WEB_s0m0YMs.pdf,222,0
+10,Explain pepsi.,5,-10.220232963562012,Preparing-for-College-Success-WEB_s0m0YMs.pdf,222,0
+11,How does outer work?,0,-2.6560158729553223,Introduction_To_Computer_Science_-_WEB.pdf,392,0
+11,How does outer work?,1,-3.7486467361450195,Cracking the coding interview 6th edition.pdf,330,0
+11,How does outer work?,2,-3.7486467361450195,Cracking the coding interview 6th edition-1.pdf,330,1
+11,How does outer work?,3,-6.039234638214111,Cracking the coding interview 6th edition.pdf,331,0
+11,How does outer work?,4,-6.039234638214111,Cracking the coding interview 6th edition-1.pdf,331,1
+11,How does outer work?,5,-8.532347679138184,Introduction_To_Computer_Science_-_WEB.pdf,216,0
+12,Why is does important?,0,0.03781181573867798,College_Success_-_WEB_zQGCJTr.pdf,99,0
+12,Why is does important?,1,-0.06758185476064682,College_Success_Concise.pdf,55,0
+12,Why is does important?,2,-0.6590679883956909,Software Engineering at Google.pdf,146,0
+12,Why is does important?,3,-0.6590679883956909,Software Engineering at Google-1.pdf,146,0
+12,Why is does important?,4,-2.272589683532715,College_Success_Concise.pdf,52,0
+12,Why is does important?,5,-2.4020204544067383,Preparing-for-College-Success-WEB_s0m0YMs.pdf,89,0
+13,What problem does public solve?,0,1.74626624584198,Introduction_To_Computer_Science_-_WEB.pdf,127,0
+13,What problem does public solve?,1,0.48295944929122925,College_Success_-_WEB_zQGCJTr.pdf,227,0
+13,What problem does public solve?,2,-2.1280174255371094,Introduction_To_Computer_Science_-_WEB.pdf,41,0
+13,What problem does public solve?,3,-2.690692901611328,Introduction_To_Computer_Science_-_WEB.pdf,47,0
+13,What problem does public solve?,4,-3.0591561794281006,Software Engineering at Google.pdf,137,0
+13,What problem does public solve?,5,-3.139134168624878,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+14,When would you use player?,0,-1.4708950519561768,Introduction_To_Computer_Science_-_WEB.pdf,217,0
+14,When would you use player?,1,-5.506409645080566,Preparing-for-College-Success-WEB_s0m0YMs.pdf,233,0
+14,When would you use player?,2,-6.791754245758057,Introduction_To_Computer_Science_-_WEB.pdf,217,0
+14,When would you use player?,3,-7.073884010314941,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,31,0
+14,When would you use player?,4,-10.239380836486816,Introduction_To_Computer_Science_-_WEB.pdf,310,0
+14,When would you use player?,5,-10.716665267944336,Cracking the coding interview 6th edition.pdf,323,0
+15,What is the relationship between attention and the rest of the topic?,0,-1.7512705326080322,College_Success_-_WEB_zQGCJTr.pdf,251,0
+15,What is the relationship between attention and the rest of the topic?,1,-7.908153057098389,College_Success_-_WEB_zQGCJTr.pdf,251,0
+15,What is the relationship between attention and the rest of the topic?,2,-8.153206825256348,College_Success_Concise.pdf,169,0
+15,What is the relationship between attention and the rest of the topic?,3,-9.15530014038086,College_Success_-_WEB_zQGCJTr.pdf,190,0
+15,What is the relationship between attention and the rest of the topic?,4,-9.201237678527832,College_Success_Concise.pdf,109,0
+15,What is the relationship between attention and the rest of the topic?,5,-10.636417388916016,College_Success_-_WEB_zQGCJTr.pdf,51,0
+16,What is critique?,0,7.06295919418335,Software Engineering at Google-1.pdf,434,1
+16,What is critique?,1,7.06295919418335,Software Engineering at Google.pdf,434,0
+16,What is critique?,2,3.8856377601623535,Software Engineering at Google.pdf,436,0
+16,What is critique?,3,3.8856377601623535,Software Engineering at Google-1.pdf,436,1
+16,What is critique?,4,3.7760426998138428,Software Engineering at Google-1.pdf,432,1
+16,What is critique?,5,3.7760426998138428,Software Engineering at Google.pdf,432,0
+17,Define implemented.,0,1.9911161661148071,Introduction_To_Computer_Science_-_WEB.pdf,519,0
+17,Define implemented.,1,1.6960070133209229,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,252,0
+17,Define implemented.,2,1.4618170261383057,Introduction_To_Computer_Science_-_WEB.pdf,542,0
+17,Define implemented.,3,-0.731686532497406,Introduction_To_Computer_Science_-_WEB.pdf,363,0
+17,Define implemented.,4,-0.8825180530548096,Introduction_To_Computer_Science_-_WEB.pdf,63,0
+17,Define implemented.,5,-2.3854856491088867,Introduction_To_Computer_Science_-_WEB.pdf,557,0
+18,Explain conceivable.,0,-8.37954330444336,Introduction_To_Computer_Science_-_WEB.pdf,393,0
+18,Explain conceivable.,1,-8.71154499053955,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,451,0
+18,Explain conceivable.,2,-9.77060317993164,College_Success_-_WEB_zQGCJTr.pdf,292,0
+18,Explain conceivable.,3,-9.863973617553711,Software Engineering at Google.pdf,178,0
+18,Explain conceivable.,4,-9.863973617553711,Software Engineering at Google-1.pdf,178,0
+18,Explain conceivable.,5,-10.651741027832031,Preparing-for-College-Success-WEB_s0m0YMs.pdf,155,0
+19,How does element work?,0,-1.6909120082855225,Competitive Programmer_s Handbook.pdf,91,0
+19,How does element work?,1,-4.560835838317871,Introduction_To_Computer_Science_-_WEB.pdf,581,0
+19,How does element work?,2,-6.290456771850586,Introduction_To_Computer_Science_-_WEB.pdf,210,0
+19,How does element work?,3,-6.603299140930176,Introduction_To_Computer_Science_-_WEB.pdf,216,0
+19,How does element work?,4,-6.825512886047363,Cracking the coding interview 6th edition-1.pdf,421,1
+19,How does element work?,5,-6.825512886047363,Cracking the coding interview 6th edition.pdf,421,0
+20,Why is runtime important?,0,-0.2299555093050003,Introduction_To_Computer_Science_-_WEB.pdf,359,0
+20,Why is runtime important?,1,-1.0508548021316528,Introduction_To_Computer_Science_-_WEB.pdf,118,0
+20,Why is runtime important?,2,-1.1133718490600586,Introduction_To_Computer_Science_-_WEB.pdf,117,0
+20,Why is runtime important?,3,-2.4607186317443848,Introduction_To_Computer_Science_-_WEB.pdf,145,0
+20,Why is runtime important?,4,-2.481844186782837,Introduction_To_Computer_Science_-_WEB.pdf,256,0
+20,Why is runtime important?,5,-2.984194755554199,Introduction_To_Computer_Science_-_WEB.pdf,360,0
+21,When would you use access?,0,0.7497769594192505,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,882,0
+21,When would you use access?,1,0.5133359432220459,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1001,0
+21,When would you use access?,2,-1.238744854927063,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,880,0
+21,When would you use access?,3,-1.2695339918136597,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,878,0
+21,When would you use access?,4,-2.590972900390625,SQL Tutorial.pdf,34,0
+21,When would you use access?,5,-2.607969284057617,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1053,0
+22,What is the relationship between cell and the rest of the topic?,0,-1.8841960430145264,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,724,0
+22,What is the relationship between cell and the rest of the topic?,1,-8.098702430725098,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,724,0
+22,What is the relationship between cell and the rest of the topic?,2,-8.794387817382812,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,721,0
+22,What is the relationship between cell and the rest of the topic?,3,-8.864297866821289,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,668,0
+22,What is the relationship between cell and the rest of the topic?,4,-9.721415519714355,Cracking the coding interview 6th edition.pdf,345,0
+22,What is the relationship between cell and the rest of the topic?,5,-9.721415519714355,Cracking the coding interview 6th edition-1.pdf,345,1
+23,What is google?,0,4.966620922088623,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,585,0
+23,What is google?,1,0.040567561984062195,Software Engineering at Google.pdf,69,1
+23,What is google?,2,0.040567561984062195,Software Engineering at Google-1.pdf,69,0
+23,What is google?,3,-0.43252167105674744,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,473,0
+23,What is google?,4,-0.6191036105155945,Software Engineering at Google-1.pdf,69,0
+23,What is google?,5,-0.6191036105155945,Software Engineering at Google.pdf,69,1
+24,Define borg.,0,-0.9264266490936279,Software Engineering at Google-1.pdf,564,0
+24,Define borg.,1,-0.9264266490936279,Software Engineering at Google.pdf,564,1
+24,Define borg.,2,-1.1933923959732056,Software Engineering at Google-1.pdf,565,0
+24,Define borg.,3,-1.1933923959732056,Software Engineering at Google.pdf,565,1
+24,Define borg.,4,-3.6750993728637695,Software Engineering at Google.pdf,552,1
+24,Define borg.,5,-3.6750993728637695,Software Engineering at Google-1.pdf,552,0
+25,Explain noticeable.,0,-7.437597274780273,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,438,0
+25,Explain noticeable.,1,-9.437128067016602,Software Engineering at Google.pdf,160,1
+25,Explain noticeable.,2,-9.437128067016602,Software Engineering at Google-1.pdf,160,0
+25,Explain noticeable.,3,-9.437580108642578,Preparing-for-College-Success-WEB_s0m0YMs.pdf,128,0
+25,Explain noticeable.,4,-9.560880661010742,College_Success_Concise.pdf,90,0
+25,Explain noticeable.,5,-10.26890754699707,College_Success_Concise.pdf,49,0
+26,How does serving work?,0,-1.4305667877197266,Software Engineering at Google.pdf,553,0
+26,How does serving work?,1,-1.4305667877197266,Software Engineering at Google-1.pdf,553,1
+26,How does serving work?,2,-6.648295879364014,College_Success_-_WEB_zQGCJTr.pdf,348,0
+26,How does serving work?,3,-6.762340068817139,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,27,0
+26,How does serving work?,4,-7.645932197570801,Introduction_To_Computer_Science_-_WEB.pdf,580,0
+26,How does serving work?,5,-8.548070907592773,College_Success_-_WEB_zQGCJTr.pdf,348,0
+27,Why is both important?,0,-1.5747013092041016,Preparing-for-College-Success-WEB_s0m0YMs.pdf,90,0
+27,Why is both important?,1,-1.5747013092041016,College_Success_Concise.pdf,53,0
+27,Why is both important?,2,-3.0668888092041016,Introduction_To_Computer_Science_-_WEB.pdf,453,0
+27,Why is both important?,3,-4.865683555603027,Preparing-for-College-Success-WEB_s0m0YMs.pdf,89,0
+27,Why is both important?,4,-7.04224157333374,Introduction_To_Computer_Science_-_WEB.pdf,348,0
+27,Why is both important?,5,-7.1013946533203125,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,99,0
+28,What problem does machines solve?,0,3.665581703186035,Introduction_To_Computer_Science_-_WEB.pdf,211,0
+28,What problem does machines solve?,1,3.4589834213256836,Introduction_To_Computer_Science_-_WEB.pdf,35,0
+28,What problem does machines solve?,2,2.0035390853881836,Introduction_To_Computer_Science_-_WEB.pdf,24,0
+28,What problem does machines solve?,3,1.594279170036316,Introduction_To_Computer_Science_-_WEB.pdf,110,0
+28,What problem does machines solve?,4,-1.210752010345459,Introduction_To_Computer_Science_-_WEB.pdf,137,0
+28,What problem does machines solve?,5,-1.3363300561904907,Introduction_To_Computer_Science_-_WEB.pdf,144,0
+29,When would you use function?,0,-1.826369285583496,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,703,0
+29,When would you use function?,1,-2.3508529663085938,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,703,0
+29,When would you use function?,2,-4.565732955932617,Introduction_To_Computer_Science_-_WEB.pdf,163,0
+29,When would you use function?,3,-4.748920917510986,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,949,0
+29,When would you use function?,4,-4.865712642669678,Introduction_To_Computer_Science_-_WEB.pdf,164,0
+29,When would you use function?,5,-5.863711357116699,Introduction_To_Computer_Science_-_WEB.pdf,348,0
+30,What is the relationship between time and the rest of the topic?,0,-7.4346818923950195,College_Success_-_WEB_zQGCJTr.pdf,91,0
+30,What is the relationship between time and the rest of the topic?,1,-7.7022504806518555,College_Success_-_WEB_zQGCJTr.pdf,88,0
+30,What is the relationship between time and the rest of the topic?,2,-8.264564514160156,Preparing-for-College-Success-WEB_s0m0YMs.pdf,84,0
+30,What is the relationship between time and the rest of the topic?,3,-9.11625862121582,College_Success_-_WEB_zQGCJTr.pdf,94,0
+30,What is the relationship between time and the rest of the topic?,4,-9.71365737915039,Preparing-for-College-Success-WEB_s0m0YMs.pdf,90,0
+30,What is the relationship between time and the rest of the topic?,5,-9.71365737915039,College_Success_Concise.pdf,53,0
+31,What is person?,0,-2.6618945598602295,College_Success_-_WEB_zQGCJTr.pdf,284,0
+31,What is person?,1,-3.149221897125244,College_Success_-_WEB_zQGCJTr.pdf,286,0
+31,What is person?,2,-4.300691604614258,Cracking the coding interview 6th edition-1.pdf,171,0
+31,What is person?,3,-4.300691604614258,Cracking the coding interview 6th edition.pdf,171,0
+31,What is person?,4,-4.3209614753723145,College_Success_-_WEB_zQGCJTr.pdf,284,0
+31,What is person?,5,-4.75168514251709,The Self-Taught Programmer.pdf,184,1
+32,Define process.,0,3.0323593616485596,Introduction_To_Computer_Science_-_WEB.pdf,262,0
+32,Define process.,1,2.5363564491271973,Introduction_To_Computer_Science_-_WEB.pdf,261,0
+32,Define process.,2,2.0780575275421143,Introduction_To_Computer_Science_-_WEB.pdf,272,0
+32,Define process.,3,1.0750200748443604,Introduction_To_Computer_Science_-_WEB.pdf,305,0
+32,Define process.,4,-0.968015730381012,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,71,1
+32,Define process.,5,-1.3152225017547607,Introduction_To_Computer_Science_-_WEB.pdf,70,0
+33,Explain risks.,0,3.485992193222046,Software Engineering at Google-1.pdf,115,0
+33,Explain risks.,1,3.485992193222046,Software Engineering at Google.pdf,115,0
+33,Explain risks.,2,1.9678146839141846,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,365,1
+33,Explain risks.,3,-0.6396093368530273,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,369,1
+33,Explain risks.,4,-0.8285405039787292,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,366,1
+33,Explain risks.,5,-1.62965726852417,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,201,1
+34,How does project work?,0,4.476975440979004,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,346,1
+34,How does project work?,1,2.482804298400879,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,342,1
+34,How does project work?,2,2.1061811447143555,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,346,1
+34,How does project work?,3,1.5152506828308105,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,359,1
+34,How does project work?,4,1.3105511665344238,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,341,1
+34,How does project work?,5,0.5131993293762207,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,376,1
+35,Why is documents important?,0,4.9681854248046875,Software Engineering at Google.pdf,216,0
+35,Why is documents important?,1,4.9681854248046875,Software Engineering at Google-1.pdf,216,0
+35,Why is documents important?,2,1.2597031593322754,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,216,1
+35,Why is documents important?,3,0.6924346685409546,Software Engineering at Google-1.pdf,230,0
+35,Why is documents important?,4,0.6924346685409546,Software Engineering at Google.pdf,230,0
+35,Why is documents important?,5,0.524715781211853,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,159,1
+36,What problem does other solve?,0,2.5634925365448,The Self-Taught Programmer.pdf,269,0
+36,What problem does other solve?,1,1.9928890466690063,Introduction_To_Computer_Science_-_WEB.pdf,129,0
+36,What problem does other solve?,2,1.445211410522461,College_Success_-_WEB_zQGCJTr.pdf,227,0
+36,What problem does other solve?,3,0.3674846291542053,College_Success_-_WEB_zQGCJTr.pdf,228,0
+36,What problem does other solve?,4,-1.701563835144043,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+36,What problem does other solve?,5,-1.8987127542495728,Introduction_To_Computer_Science_-_WEB.pdf,50,0
+37,When would you use review?,0,-1.7906670570373535,Software Engineering at Google.pdf,227,0
+37,When would you use review?,1,-1.7906670570373535,Software Engineering at Google-1.pdf,227,0
+37,When would you use review?,2,-2.756284713745117,Software Engineering at Google-1.pdf,443,0
+37,When would you use review?,3,-2.756284713745117,Software Engineering at Google.pdf,443,0
+37,When would you use review?,4,-3.277698516845703,Software Engineering at Google-1.pdf,206,0
+37,When would you use review?,5,-3.277698516845703,Software Engineering at Google.pdf,206,0
+38,What is the relationship between trust and the rest of the topic?,0,0.10128546506166458,Introduction_To_Computer_Science_-_WEB.pdf,839,0
+38,What is the relationship between trust and the rest of the topic?,1,-4.026240348815918,Preparing-for-College-Success-WEB_s0m0YMs.pdf,173,0
+38,What is the relationship between trust and the rest of the topic?,2,-5.650155067443848,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,221,0
+38,What is the relationship between trust and the rest of the topic?,3,-7.225552082061768,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,183,0
+38,What is the relationship between trust and the rest of the topic?,4,-7.599641799926758,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,221,0
+38,What is the relationship between trust and the rest of the topic?,5,-9.242561340332031,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,183,0
+39,What is That?,0,-6.420268535614014,College_Success_-_WEB_zQGCJTr.pdf,423,0
+39,What is That?,1,-8.208995819091797,Competitive Programmer_s Handbook.pdf,9,0
+39,What is That?,2,-9.262016296386719,The Self-Taught Programmer.pdf,295,0
+39,What is That?,3,-9.313735008239746,Cracking the coding interview 6th edition.pdf,203,0
+39,What is That?,4,-9.313735008239746,Cracking the coding interview 6th edition-1.pdf,203,0
+39,What is That?,5,-9.768354415893555,Cracking the coding interview 6th edition.pdf,12,0
+40,Define This.,0,-4.050854682922363,Introduction_To_Computer_Science_-_WEB.pdf,364,0
+40,Define This.,1,-4.597784042358398,Preparing-for-College-Success-WEB_s0m0YMs.pdf,53,0
+40,Define This.,2,-5.171380996704102,Introduction_To_Computer_Science_-_WEB.pdf,301,0
+40,Define This.,3,-5.831878662109375,The Self-Taught Programmer.pdf,180,0
+40,Define This.,4,-5.90352725982666,Introduction_To_Computer_Science_-_WEB.pdf,363,0
+40,Define This.,5,-6.051434516906738,Software Engineering at Google.pdf,77,1
+41,Explain nosql.,0,6.554605484008789,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,877,0
+41,Explain nosql.,1,4.884250640869141,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,877,0
+41,Explain nosql.,2,4.086441516876221,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,107,1
+41,Explain nosql.,3,3.836695909500122,Introduction_To_Computer_Science_-_WEB.pdf,411,0
+41,Explain nosql.,4,3.303173065185547,Introduction_To_Computer_Science_-_WEB.pdf,386,0
+41,Explain nosql.,5,2.4519453048706055,Introduction_To_Computer_Science_-_WEB.pdf,412,0
+42,How does adapts work?,0,0.06382918357849121,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,41,0
+42,How does adapts work?,1,-4.0479207038879395,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,66,0
+42,How does adapts work?,2,-7.574761867523193,Introduction_To_Computer_Science_-_WEB.pdf,209,0
+42,How does adapts work?,3,-7.57880973815918,Introduction_To_Computer_Science_-_WEB.pdf,580,0
+42,How does adapts work?,4,-7.745497226715088,Introduction_To_Computer_Science_-_WEB.pdf,210,0
+42,How does adapts work?,5,-8.817184448242188,Introduction_To_Computer_Science_-_WEB.pdf,209,0
+43,Why is database important?,0,5.758429527282715,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,108,1
+43,Why is database important?,1,3.576817512512207,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,868,0
+43,Why is database important?,2,3.0993599891662598,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,120,1
+43,Why is database important?,3,1.9935327768325806,Introduction_To_Computer_Science_-_WEB.pdf,383,0
+43,Why is database important?,4,1.3796228170394897,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,120,1
+43,Why is database important?,5,0.6943967938423157,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,883,0
+44,What problem does calendar solve?,0,-0.4488561749458313,College_Success_-_WEB_zQGCJTr.pdf,221,0
+44,What problem does calendar solve?,1,-0.6855625510215759,Preparing-for-College-Success-WEB_s0m0YMs.pdf,82,0
+44,What problem does calendar solve?,2,-0.8395997285842896,College_Success_Concise.pdf,45,0
+44,What problem does calendar solve?,3,-1.8651822805404663,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,97,1
+44,What problem does calendar solve?,4,-3.1026337146759033,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,97,1
+44,What problem does calendar solve?,5,-3.8087220191955566,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,96,1
+45,When would you use allow?,0,-4.846596717834473,Software Engineering at Google.pdf,180,0
+45,When would you use allow?,1,-4.846596717834473,Software Engineering at Google-1.pdf,180,0
+45,When would you use allow?,2,-8.630014419555664,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,105,0
+45,When would you use allow?,3,-9.91472053527832,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,105,0
+45,When would you use allow?,4,-9.974712371826172,Introduction_To_Computer_Science_-_WEB.pdf,300,0
+45,When would you use allow?,5,-10.0912504196167,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,949,1
+46,What is the relationship between meetings and the rest of the topic?,0,-2.5330264568328857,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,137,1
+46,What is the relationship between meetings and the rest of the topic?,1,-5.39310359954834,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,529,1
+46,What is the relationship between meetings and the rest of the topic?,2,-6.700282096862793,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,137,1
+46,What is the relationship between meetings and the rest of the topic?,3,-6.996681213378906,College_Success_-_WEB_zQGCJTr.pdf,242,0
+46,What is the relationship between meetings and the rest of the topic?,4,-9.105422019958496,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,136,1
+46,What is the relationship between meetings and the rest of the topic?,5,-9.148993492126465,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,529,1
+47,What is This?,0,-2.1106455326080322,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,112,0
+47,What is This?,1,-4.201301574707031,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,213,0
+47,What is This?,2,-5.343755722045898,Introduction_To_Computer_Science_-_WEB.pdf,666,0
+47,What is This?,3,-5.600672721862793,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,212,0
+47,What is This?,4,-6.929879188537598,College_Success_-_WEB_zQGCJTr.pdf,76,0
+47,What is This?,5,-8.650182723999023,Cracking the coding interview 6th edition-1.pdf,203,0
+48,Define majority.,0,1.3126318454742432,Cracking the coding interview 6th edition.pdf,566,0
+48,Define majority.,1,1.3126318454742432,Cracking the coding interview 6th edition-1.pdf,566,0
+48,Define majority.,2,0.8408370018005371,College_Success_-_WEB_zQGCJTr.pdf,277,0
+48,Define majority.,3,0.156693235039711,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,452,0
+48,Define majority.,4,-3.3743653297424316,Cracking the coding interview 6th edition.pdf,567,0
+48,Define majority.,5,-3.3743653297424316,Cracking the coding interview 6th edition-1.pdf,567,0
+49,Explain control.,0,-0.08778733015060425,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,26,0
+49,Explain control.,1,-0.3423062860965729,Introduction_To_Computer_Science_-_WEB.pdf,156,0
+49,Explain control.,2,-1.870450496673584,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,60,0
+49,Explain control.,3,-1.9939751625061035,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,194,0
+49,Explain control.,4,-2.4841418266296387,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,973,0
+49,Explain control.,5,-2.6787960529327393,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,58,0
+50,How does name work?,0,-3.506197452545166,Introduction_To_Computer_Science_-_WEB.pdf,330,0
+50,How does name work?,1,-5.3597846031188965,The Self-Taught Programmer.pdf,182,0
+50,How does name work?,2,-5.6126909255981445,Cracking the coding interview 6th edition-1.pdf,553,0
+50,How does name work?,3,-5.6126909255981445,Cracking the coding interview 6th edition.pdf,553,0
+50,How does name work?,4,-5.665074348449707,Cracking the coding interview 6th edition-1.pdf,553,0
+50,How does name work?,5,-5.665074348449707,Cracking the coding interview 6th edition.pdf,553,0
+51,Why is inventory important?,0,-1.454641580581665,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,309,0
+51,Why is inventory important?,1,-5.012929916381836,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,458,0
+51,Why is inventory important?,2,-5.342764854431152,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,433,0
+51,Why is inventory important?,3,-6.267711162567139,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,431,0
+51,Why is inventory important?,4,-7.594232082366943,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,424,0
+51,Why is inventory important?,5,-7.628636360168457,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,73,0
+52,What problem does phone solve?,0,-5.254448890686035,Introduction_To_Computer_Science_-_WEB.pdf,41,0
+52,What problem does phone solve?,1,-5.631204605102539,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,28,0
+52,What problem does phone solve?,2,-7.022993087768555,Cracking the coding interview 6th edition.pdf,28,0
+52,What problem does phone solve?,3,-7.022993087768555,Cracking the coding interview 6th edition-1.pdf,28,0
+52,What problem does phone solve?,4,-7.387396812438965,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,31,0
+52,What problem does phone solve?,5,-8.398209571838379,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,397,0
+53,When would you use There?,0,-6.605263710021973,Software Engineering at Google.pdf,180,1
+53,When would you use There?,1,-6.605263710021973,Software Engineering at Google-1.pdf,180,0
+53,When would you use There?,2,-7.085771560668945,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,97,0
+53,When would you use There?,3,-9.240493774414062,Cracking the coding interview 6th edition.pdf,150,0
+53,When would you use There?,4,-9.240493774414062,Cracking the coding interview 6th edition-1.pdf,150,0
+53,When would you use There?,5,-10.505485534667969,The Self-Taught Programmer.pdf,211,0
+54,What is the relationship between test and the rest of the topic?,0,-5.6896653175354,Software Engineering at Google.pdf,258,1
+54,What is the relationship between test and the rest of the topic?,1,-6.511238098144531,Cracking the coding interview 6th edition.pdf,164,0
+54,What is the relationship between test and the rest of the topic?,2,-6.511238098144531,Cracking the coding interview 6th edition-1.pdf,164,0
+54,What is the relationship between test and the rest of the topic?,3,-7.585599422454834,College_Success_-_WEB_zQGCJTr.pdf,199,0
+54,What is the relationship between test and the rest of the topic?,4,-8.186988830566406,Cracking the coding interview 6th edition-1.pdf,164,0
+54,What is the relationship between test and the rest of the topic?,5,-8.186988830566406,Cracking the coding interview 6th edition.pdf,164,0
+55,What is regardless?,0,-5.905370235443115,College_Success_-_WEB_zQGCJTr.pdf,286,0
+55,What is regardless?,1,-6.333385944366455,College_Success_-_WEB_zQGCJTr.pdf,276,0
+55,What is regardless?,2,-7.067409992218018,College_Success_-_WEB_zQGCJTr.pdf,276,0
+55,What is regardless?,3,-7.173038482666016,College_Success_-_WEB_zQGCJTr.pdf,300,0
+55,What is regardless?,4,-7.677078723907471,College_Success_-_WEB_zQGCJTr.pdf,294,0
+55,What is regardless?,5,-8.211316108703613,College_Success_-_WEB_zQGCJTr.pdf,294,0
+56,Define cyber.,0,5.078854560852051,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,396,1
+56,Define cyber.,1,2.129323959350586,Introduction_To_Computer_Science_-_WEB.pdf,917,0
+56,Define cyber.,2,1.9349017143249512,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,57,0
+56,Define cyber.,3,1.0360313653945923,Introduction_To_Computer_Science_-_WEB.pdf,909,0
+56,Define cyber.,4,0.9363892078399658,Introduction_To_Computer_Science_-_WEB.pdf,828,0
+56,Define cyber.,5,-0.5799140930175781,Introduction_To_Computer_Science_-_WEB.pdf,828,0
+57,Explain political.,0,-4.214731216430664,Software Engineering at Google.pdf,68,0
+57,Explain political.,1,-4.214731216430664,Software Engineering at Google-1.pdf,68,0
+57,Explain political.,2,-5.536628723144531,College_Success_-_WEB_zQGCJTr.pdf,264,0
+57,Explain political.,3,-6.05266809463501,College_Success_-_WEB_zQGCJTr.pdf,274,0
+57,Explain political.,4,-6.085390090942383,College_Success_-_WEB_zQGCJTr.pdf,279,0
+57,Explain political.,5,-6.187207221984863,College_Success_Concise.pdf,76,0
+58,How does activism work?,0,-1.23796546459198,College_Success_-_WEB_zQGCJTr.pdf,299,0
+58,How does activism work?,1,-4.307260036468506,College_Success_-_WEB_zQGCJTr.pdf,275,0
+58,How does activism work?,2,-7.297881126403809,College_Success_-_WEB_zQGCJTr.pdf,280,0
+58,How does activism work?,3,-7.640580177307129,College_Success_-_WEB_zQGCJTr.pdf,275,0
+58,How does activism work?,4,-8.148515701293945,College_Success_-_WEB_zQGCJTr.pdf,279,0
+58,How does activism work?,5,-8.453573226928711,College_Success_-_WEB_zQGCJTr.pdf,279,0
+59,Why is learning important?,0,5.775176048278809,College_Success_-_WEB_zQGCJTr.pdf,43,0
+59,Why is learning important?,1,5.642163276672363,College_Success_Concise.pdf,55,0
+59,Why is learning important?,2,2.341362953186035,College_Success_-_WEB_zQGCJTr.pdf,43,0
+59,Why is learning important?,3,0.8054864406585693,College_Success_-_WEB_zQGCJTr.pdf,43,0
+59,Why is learning important?,4,-0.21121560037136078,College_Success_-_WEB_zQGCJTr.pdf,43,0
+59,Why is learning important?,5,-0.46362870931625366,College_Success_-_WEB_zQGCJTr.pdf,43,0
+60,What problem does intel solve?,0,1.215500831604004,Introduction_To_Computer_Science_-_WEB.pdf,206,1
+60,What problem does intel solve?,1,-4.078293323516846,Introduction_To_Computer_Science_-_WEB.pdf,211,1
+60,What problem does intel solve?,2,-4.606544494628906,Introduction_To_Computer_Science_-_WEB.pdf,848,1
+60,What problem does intel solve?,3,-6.327919006347656,Introduction_To_Computer_Science_-_WEB.pdf,137,1
+60,What problem does intel solve?,4,-8.200613021850586,Introduction_To_Computer_Science_-_WEB.pdf,240,1
+60,What problem does intel solve?,5,-8.605730056762695,Introduction_To_Computer_Science_-_WEB.pdf,848,1
+61,When would you use neural?,0,-4.867658615112305,Introduction_To_Computer_Science_-_WEB.pdf,37,1
+61,When would you use neural?,1,-5.227610111236572,Introduction_To_Computer_Science_-_WEB.pdf,37,1
+61,When would you use neural?,2,-5.679304122924805,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,395,0
+61,When would you use neural?,3,-5.8791093826293945,Introduction_To_Computer_Science_-_WEB.pdf,811,1
+61,When would you use neural?,4,-6.210155010223389,Introduction_To_Computer_Science_-_WEB.pdf,811,1
+61,When would you use neural?,5,-7.922878265380859,Preparing-for-College-Success-WEB_s0m0YMs.pdf,147,0
+62,What is the relationship between abstraction and the rest of the topic?,0,-1.677567720413208,Introduction_To_Computer_Science_-_WEB.pdf,53,1
+62,What is the relationship between abstraction and the rest of the topic?,1,-2.7164535522460938,Introduction_To_Computer_Science_-_WEB.pdf,316,1
+62,What is the relationship between abstraction and the rest of the topic?,2,-2.7693896293640137,Introduction_To_Computer_Science_-_WEB.pdf,56,1
+62,What is the relationship between abstraction and the rest of the topic?,3,-3.7060024738311768,Introduction_To_Computer_Science_-_WEB.pdf,210,1
+62,What is the relationship between abstraction and the rest of the topic?,4,-4.817450046539307,Introduction_To_Computer_Science_-_WEB.pdf,247,1
+62,What is the relationship between abstraction and the rest of the topic?,5,-5.5372796058654785,Introduction_To_Computer_Science_-_WEB.pdf,94,1
+63,What is operating?,0,1.057104468345642,Introduction_To_Computer_Science_-_WEB.pdf,260,1
+63,What is operating?,1,0.6205720901489258,Introduction_To_Computer_Science_-_WEB.pdf,257,1
+63,What is operating?,2,0.37639105319976807,Introduction_To_Computer_Science_-_WEB.pdf,258,1
+63,What is operating?,3,-1.1848407983779907,Introduction_To_Computer_Science_-_WEB.pdf,258,1
+63,What is operating?,4,-2.322941780090332,Introduction_To_Computer_Science_-_WEB.pdf,304,1
+63,What is operating?,5,-2.730311632156372,Introduction_To_Computer_Science_-_WEB.pdf,257,1
+64,Explain products.,0,-3.1043930053710938,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,350,1
+64,Explain products.,1,-3.817612886428833,Introduction_To_Computer_Science_-_WEB.pdf,71,0
+64,Explain products.,2,-4.1077375411987305,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,758,0
+64,Explain products.,3,-4.314269065856934,College_Success_-_WEB_zQGCJTr.pdf,352,0
+64,Explain products.,4,-6.147504806518555,College_Success_Concise.pdf,175,0
+64,Explain products.,5,-6.244969367980957,Preparing-for-College-Success-WEB_s0m0YMs.pdf,222,0
+65,How does connecting work?,0,-2.362147331237793,Introduction_To_Computer_Science_-_WEB.pdf,167,0
+65,How does connecting work?,1,-2.462523937225342,Introduction_To_Computer_Science_-_WEB.pdf,927,0
+65,How does connecting work?,2,-2.958059549331665,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,41,0
+65,How does connecting work?,3,-3.2436418533325195,Introduction_To_Computer_Science_-_WEB.pdf,928,0
+65,How does connecting work?,4,-3.4498066902160645,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,41,0
+65,How does connecting work?,5,-4.262296676635742,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,41,0
+66,Why is services important?,0,0.8008028268814087,Preparing-for-College-Success-WEB_s0m0YMs.pdf,276,0
+66,Why is services important?,1,0.8008028268814087,College_Success_-_WEB_zQGCJTr.pdf,130,0
+66,Why is services important?,2,-2.0746541023254395,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,268,1
+66,Why is services important?,3,-2.663534164428711,Preparing-for-College-Success-WEB_s0m0YMs.pdf,276,0
+66,Why is services important?,4,-2.663534164428711,College_Success_-_WEB_zQGCJTr.pdf,130,0
+66,Why is services important?,5,-3.1774604320526123,College_Success_Concise.pdf,224,0
+67,What problem does add-on solve?,0,4.245159149169922,Cracking the coding interview 6th edition.pdf,542,0
+67,What problem does add-on solve?,1,4.245159149169922,Cracking the coding interview 6th edition-1.pdf,542,0
+67,What problem does add-on solve?,2,1.579261064529419,Cracking the coding interview 6th edition-1.pdf,490,0
+67,What problem does add-on solve?,3,1.579261064529419,Cracking the coding interview 6th edition.pdf,490,0
+67,What problem does add-on solve?,4,-2.9386610984802246,Introduction_To_Computer_Science_-_WEB.pdf,53,0
+67,What problem does add-on solve?,5,-4.63642692565918,The Self-Taught Programmer.pdf,183,0
+68,When would you use docs?,0,0.7237095236778259,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,397,1
+68,When would you use docs?,1,-0.22743156552314758,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,292,1
+68,When would you use docs?,2,-0.9758849143981934,Software Engineering at Google-1.pdf,229,0
+68,When would you use docs?,3,-0.9758849143981934,Software Engineering at Google.pdf,229,0
+68,When would you use docs?,4,-0.9846203327178955,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,228,1
+68,When would you use docs?,5,-3.571789503097534,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,339,1
+69,What is the relationship between Google Workspace and the rest of the topic?,0,0.7246888875961304,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,139,1
+69,What is the relationship between Google Workspace and the rest of the topic?,1,0.04086264595389366,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,119,1
+69,What is the relationship between Google Workspace and the rest of the topic?,2,-1.5139734745025635,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,122,1
+69,What is the relationship between Google Workspace and the rest of the topic?,3,-2.122835636138916,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,119,1
+69,What is the relationship between Google Workspace and the rest of the topic?,4,-3.032649278640747,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,74,1
+69,What is the relationship between Google Workspace and the rest of the topic?,5,-3.2606124877929688,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,121,1
+70,What is smallest?,0,-0.974602222442627,Competitive Programmer_s Handbook.pdf,102,0
+70,What is smallest?,1,-1.8828246593475342,50-Coding-Interview-Questions.pdf,25,0
+70,What is smallest?,2,-2.5243942737579346,Competitive Programmer_s Handbook.pdf,91,0
+70,What is smallest?,3,-3.596174955368042,Cracking the coding interview 6th edition-1.pdf,115,1
+70,What is smallest?,4,-3.596174955368042,Cracking the coding interview 6th edition.pdf,115,0
+70,What is smallest?,5,-3.746206283569336,SQL Tutorial.pdf,176,0
+71,Define difference.,0,-1.4813026189804077,Introduction_To_Computer_Science_-_WEB.pdf,96,0
+71,Define difference.,1,-3.3234498500823975,Competitive Programmer_s Handbook.pdf,103,0
+71,Define difference.,2,-3.3826889991760254,Introduction_To_Computer_Science_-_WEB.pdf,390,0
+71,Define difference.,3,-5.015843868255615,Introduction_To_Computer_Science_-_WEB.pdf,587,0
+71,Define difference.,4,-5.376405715942383,Introduction_To_Computer_Science_-_WEB.pdf,453,0
+71,Define difference.,5,-7.192432880401611,Introduction_To_Computer_Science_-_WEB.pdf,149,0
+72,Explain hints.,0,2.7883808612823486,Cracking the coding interview 6th edition.pdf,664,0
+72,Explain hints.,1,2.7883808612823486,Cracking the coding interview 6th edition-1.pdf,664,1
+72,Explain hints.,2,-4.836277961730957,Cracking the coding interview 6th edition.pdf,169,0
+72,Explain hints.,3,-4.836277961730957,Cracking the coding interview 6th edition-1.pdf,169,1
+72,Explain hints.,4,-8.737274169921875,Cracking the coding interview 6th edition-1.pdf,432,1
+72,Explain hints.,5,-8.737274169921875,Cracking the coding interview 6th edition.pdf,432,0
+73,How does excel work?,0,3.4689369201660156,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,608,1
+73,How does excel work?,1,3.1534926891326904,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,606,1
+73,How does excel work?,2,3.068056106567383,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,607,1
+73,How does excel work?,3,2.2628731727600098,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,755,1
+73,How does excel work?,4,1.968967080116272,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,669,1
+73,How does excel work?,5,1.9633437395095825,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,669,1
+74,Why is descriptions important?,0,-5.674169540405273,College_Success_-_WEB_zQGCJTr.pdf,263,0
+74,Why is descriptions important?,1,-6.51725959777832,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,473,1
+74,Why is descriptions important?,2,-6.811117172241211,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,779,1
+74,Why is descriptions important?,3,-8.906715393066406,College_Success_-_WEB_zQGCJTr.pdf,161,0
+74,Why is descriptions important?,4,-9.0407133102417,Software Engineering at Google-1.pdf,226,0
+74,Why is descriptions important?,5,-9.0407133102417,Software Engineering at Google.pdf,226,0
+75,What problem does accounting solve?,0,-1.6470282077789307,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,844,1
+75,What problem does accounting solve?,1,-2.250072479248047,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,844,1
+75,What problem does accounting solve?,2,-2.3871331214904785,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,863,1
+75,What problem does accounting solve?,3,-3.7027642726898193,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,845,1
+75,What problem does accounting solve?,4,-4.362484455108643,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,844,1
+75,What problem does accounting solve?,5,-4.404641151428223,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,843,1
+76,When would you use forward?,0,2.531789541244507,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,91,0
+76,When would you use forward?,1,-8.48979663848877,Introduction_To_Computer_Science_-_WEB.pdf,929,1
+76,When would you use forward?,2,-9.372552871704102,Introduction_To_Computer_Science_-_WEB.pdf,136,1
+76,When would you use forward?,3,-9.723169326782227,Software Engineering at Google-1.pdf,66,0
+76,When would you use forward?,4,-9.723169326782227,Software Engineering at Google.pdf,66,0
+76,When would you use forward?,5,-10.15238094329834,College_Success_-_WEB_zQGCJTr.pdf,244,0
+77,What is the relationship between pond and the rest of the topic?,0,-5.043318271636963,Introduction_To_Computer_Science_-_WEB.pdf,864,1
+77,What is the relationship between pond and the rest of the topic?,1,-6.578707695007324,Cracking the coding interview 6th edition.pdf,196,0
+77,What is the relationship between pond and the rest of the topic?,2,-6.578707695007324,Cracking the coding interview 6th edition-1.pdf,196,0
+77,What is the relationship between pond and the rest of the topic?,3,-8.502337455749512,Cracking the coding interview 6th edition.pdf,515,0
+77,What is the relationship between pond and the rest of the topic?,4,-8.502337455749512,Cracking the coding interview 6th edition-1.pdf,515,0
+77,What is the relationship between pond and the rest of the topic?,5,-10.983656883239746,Introduction_To_Computer_Science_-_WEB.pdf,417,1
+78,What is cyber?,0,6.287631988525391,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,396,0
+78,What is cyber?,1,2.5092179775238037,Introduction_To_Computer_Science_-_WEB.pdf,917,1
+78,What is cyber?,2,2.3872227668762207,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,57,0
+78,What is cyber?,3,2.1023988723754883,Introduction_To_Computer_Science_-_WEB.pdf,828,1
+78,What is cyber?,4,1.9900480508804321,Introduction_To_Computer_Science_-_WEB.pdf,909,1
+78,What is cyber?,5,0.5174762606620789,Introduction_To_Computer_Science_-_WEB.pdf,828,1
+79,Define continuous.,0,-0.05186951905488968,Software Engineering at Google-1.pdf,508,0
+79,Define continuous.,1,-0.05186951905488968,Software Engineering at Google.pdf,508,1
+79,Define continuous.,2,-0.3405713140964508,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,201,0
+79,Define continuous.,3,-1.351599097251892,Introduction_To_Computer_Science_-_WEB.pdf,470,0
+79,Define continuous.,4,-1.7233213186264038,Software Engineering at Google-1.pdf,534,0
+79,Define continuous.,5,-1.7233213186264038,Software Engineering at Google.pdf,534,1
+80,Explain frequently.,0,-4.699490547180176,College_Success_Concise.pdf,106,0
+80,Explain frequently.,1,-6.922636985778809,Preparing-for-College-Success-WEB_s0m0YMs.pdf,106,0
+80,Explain frequently.,2,-7.132833003997803,College_Success_Concise.pdf,104,0
+80,Explain frequently.,3,-7.892693519592285,College_Success_-_WEB_zQGCJTr.pdf,263,0
+80,Explain frequently.,4,-7.938368797302246,Software Engineering at Google.pdf,174,1
+80,Explain frequently.,5,-8.338155746459961,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,448,0
+81,How does changes work?,0,0.5654160976409912,Software Engineering at Google-1.pdf,205,0
+81,How does changes work?,1,0.5654160976409912,Software Engineering at Google.pdf,205,1
+81,How does changes work?,2,-0.011968176811933517,Software Engineering at Google-1.pdf,194,0
+81,How does changes work?,3,-0.011968176811933517,Software Engineering at Google.pdf,194,1
+81,How does changes work?,4,-0.5504530668258667,Software Engineering at Google.pdf,502,1
+81,How does changes work?,5,-0.5504530668258667,Software Engineering at Google-1.pdf,502,0
+82,Why is being important?,0,0.13365045189857483,College_Success_-_WEB_zQGCJTr.pdf,115,0
+82,Why is being important?,1,-2.253054141998291,College_Success_Concise.pdf,17,0
+82,Why is being important?,2,-2.571296453475952,Preparing-for-College-Success-WEB_s0m0YMs.pdf,47,0
+82,Why is being important?,3,-2.847655773162842,College_Success_-_WEB_zQGCJTr.pdf,19,0
+82,Why is being important?,4,-4.030168533325195,College_Success_-_WEB_zQGCJTr.pdf,48,0
+82,Why is being important?,5,-4.518521785736084,College_Success_-_WEB_zQGCJTr.pdf,93,0
+83,What problem does capital solve?,0,-3.2812695503234863,College_Success_-_WEB_zQGCJTr.pdf,69,0
+83,What problem does capital solve?,1,-3.3972220420837402,College_Success_-_WEB_zQGCJTr.pdf,227,0
+83,What problem does capital solve?,2,-5.408185005187988,College_Success_-_WEB_zQGCJTr.pdf,228,0
+83,What problem does capital solve?,3,-5.5428314208984375,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+83,What problem does capital solve?,4,-5.545626640319824,Preparing-for-College-Success-WEB_s0m0YMs.pdf,241,0
+83,What problem does capital solve?,5,-5.713776588439941,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+84,When would you use technology?,0,-0.7449747323989868,College_Success_-_WEB_zQGCJTr.pdf,247,0
+84,When would you use technology?,1,-1.1684430837631226,College_Success_-_WEB_zQGCJTr.pdf,248,0
+84,When would you use technology?,2,-2.0127739906311035,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,387,0
+84,When would you use technology?,3,-4.077444076538086,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,36,1
+84,When would you use technology?,4,-4.165579795837402,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,387,0
+84,When would you use technology?,5,-4.3802266120910645,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,24,1
+85,What is the relationship between name and the rest of the topic?,0,-8.63686752319336,Preparing-for-College-Success-WEB_s0m0YMs.pdf,110,0
+85,What is the relationship between name and the rest of the topic?,1,-8.687248229980469,College_Success_-_WEB_zQGCJTr.pdf,151,0
+85,What is the relationship between name and the rest of the topic?,2,-8.700679779052734,College_Success_Concise.pdf,72,0
+85,What is the relationship between name and the rest of the topic?,3,-9.1878023147583,College_Success_Concise.pdf,76,0
+85,What is the relationship between name and the rest of the topic?,4,-9.367110252380371,College_Success_-_WEB_zQGCJTr.pdf,155,0
+85,What is the relationship between name and the rest of the topic?,5,-9.564506530761719,Cracking the coding interview 6th edition.pdf,553,0
+86,What is inventory?,0,0.06644800305366516,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,309,0
+86,What is inventory?,1,-0.28168776631355286,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,942,0
+86,What is inventory?,2,-1.526632308959961,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,948,0
+86,What is inventory?,3,-3.251829147338867,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,73,0
+86,What is inventory?,4,-4.8588032722473145,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,614,0
+86,What is inventory?,5,-4.9466376304626465,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1011,0
+87,Define manage.,0,-1.0900788307189941,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,342,0
+87,Define manage.,1,-1.2623716592788696,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,57,0
+87,Define manage.,2,-1.5762654542922974,Software Engineering at Google-1.pdf,113,0
+87,Define manage.,3,-1.5762654542922974,Software Engineering at Google.pdf,113,0
+87,Define manage.,4,-1.9945718050003052,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,350,0
+87,Define manage.,5,-3.225126028060913,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,58,0
+88,Explain operators.,0,4.901838302612305,SQL Tutorial.pdf,42,1
+88,Explain operators.,1,2.7304558753967285,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,950,0
+88,Explain operators.,2,2.368504047393799,Introduction_To_Computer_Science_-_WEB.pdf,333,0
+88,Explain operators.,3,1.229255199432373,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,949,0
+88,Explain operators.,4,0.7922345995903015,Introduction_To_Computer_Science_-_WEB.pdf,333,0
+88,Explain operators.,5,-0.11814577132463455,The Self-Taught Programmer.pdf,42,0
+89,How does hand work?,0,-5.345030307769775,Cracking the coding interview 6th edition.pdf,78,0
+89,How does hand work?,1,-5.345030307769775,Cracking the coding interview 6th edition-1.pdf,78,0
+89,How does hand work?,2,-6.510921955108643,College_Success_-_WEB_zQGCJTr.pdf,61,0
+89,How does hand work?,3,-8.600778579711914,College_Success_-_WEB_zQGCJTr.pdf,61,0
+89,How does hand work?,4,-9.702816009521484,Cracking the coding interview 6th edition.pdf,463,0
+89,How does hand work?,5,-9.702816009521484,Cracking the coding interview 6th edition-1.pdf,463,0
+90,Why is operator important?,0,0.648948073387146,SQL Tutorial.pdf,42,1
+90,Why is operator important?,1,-1.4370495080947876,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,950,0
+90,Why is operator important?,2,-2.830711841583252,Introduction_To_Computer_Science_-_WEB.pdf,390,0
+90,Why is operator important?,3,-3.353830337524414,Introduction_To_Computer_Science_-_WEB.pdf,391,0
+90,Why is operator important?,4,-3.5584471225738525,Introduction_To_Computer_Science_-_WEB.pdf,333,0
+90,Why is operator important?,5,-3.5645294189453125,Introduction_To_Computer_Science_-_WEB.pdf,332,0
+91,What problem does linked solve?,0,5.8825836181640625,Cracking the coding interview 6th edition.pdf,105,0
+91,What problem does linked solve?,1,5.8825836181640625,Cracking the coding interview 6th edition-1.pdf,105,0
+91,What problem does linked solve?,2,0.2903920114040375,Introduction_To_Computer_Science_-_WEB.pdf,175,0
+91,What problem does linked solve?,3,-1.7923574447631836,Cracking the coding interview 6th edition.pdf,105,0
+91,What problem does linked solve?,4,-1.7923574447631836,Cracking the coding interview 6th edition-1.pdf,105,0
+91,What problem does linked solve?,5,-1.9588316679000854,Introduction_To_Computer_Science_-_WEB.pdf,125,0
+92,When would you use list?,0,-2.2372050285339355,Introduction_To_Computer_Science_-_WEB.pdf,103,0
+92,When would you use list?,1,-3.1290509700775146,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,246,0
+92,When would you use list?,2,-3.1473405361175537,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,246,0
+92,When would you use list?,3,-5.133455753326416,Software Engineering at Google.pdf,79,0
+92,When would you use list?,4,-5.394266128540039,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,246,0
+92,When would you use list?,5,-5.946612358093262,Introduction_To_Computer_Science_-_WEB.pdf,104,0
+93,What is the relationship between tree and the rest of the topic?,0,-4.06242561340332,Competitive Programmer_s Handbook.pdf,143,0
+93,What is the relationship between tree and the rest of the topic?,1,-6.249281406402588,Introduction_To_Computer_Science_-_WEB.pdf,105,0
+93,What is the relationship between tree and the rest of the topic?,2,-6.451492786407471,Cracking the coding interview 6th edition-1.pdf,113,0
+93,What is the relationship between tree and the rest of the topic?,3,-6.451492786407471,Cracking the coding interview 6th edition.pdf,113,0
+93,What is the relationship between tree and the rest of the topic?,4,-8.510887145996094,Cracking the coding interview 6th edition.pdf,112,0
+93,What is the relationship between tree and the rest of the topic?,5,-8.510887145996094,Cracking the coding interview 6th edition-1.pdf,112,0
+94,What is positioning?,0,-3.676011562347412,Cracking the coding interview 6th edition-1.pdf,331,0
+94,What is positioning?,1,-3.676011562347412,Cracking the coding interview 6th edition.pdf,331,0
+94,What is positioning?,2,-4.111596584320068,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,229,1
+94,What is positioning?,3,-4.1137590408325195,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,439,1
+94,What is positioning?,4,-6.152589797973633,Introduction_To_Computer_Science_-_WEB.pdf,73,0
+94,What is positioning?,5,-8.728898048400879,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,172,1
+95,Define text.,0,-2.2624258995056152,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,552,1
+95,Define text.,1,-2.928436756134033,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,159,1
+95,Define text.,2,-3.931544303894043,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,331,1
+95,Define text.,3,-3.9386825561523438,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,159,1
+95,Define text.,4,-4.0551934242248535,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,267,1
+95,Define text.,5,-5.311481475830078,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,946,1
+96,Explain option.,0,-4.22681188583374,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,107,1
+96,Explain option.,1,-4.332258224487305,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+96,Explain option.,2,-8.167223930358887,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,13,1
+96,Explain option.,3,-8.741140365600586,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1007,1
+96,Explain option.,4,-8.873152732849121,Software Engineering at Google-1.pdf,77,0
+96,Explain option.,5,-8.873152732849121,Software Engineering at Google.pdf,77,0
+97,How does condition work?,0,-0.37800538539886475,Introduction_To_Computer_Science_-_WEB.pdf,352,1
+97,How does condition work?,1,-2.2846264839172363,SQL Tutorial.pdf,64,0
+97,How does condition work?,2,-3.977919340133667,SQL Tutorial.pdf,43,0
+97,How does condition work?,3,-6.361677169799805,Introduction_To_Computer_Science_-_WEB.pdf,487,1
+97,How does condition work?,4,-8.8562593460083,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,705,0
+97,How does condition work?,5,-9.299336433410645,Introduction_To_Computer_Science_-_WEB.pdf,336,1
+98,Why is function important?,0,0.4647761881351471,Introduction_To_Computer_Science_-_WEB.pdf,163,1
+98,Why is function important?,1,-0.10866263508796692,Introduction_To_Computer_Science_-_WEB.pdf,885,1
+98,Why is function important?,2,-1.2920697927474976,Introduction_To_Computer_Science_-_WEB.pdf,348,1
+98,Why is function important?,3,-3.487905979156494,Introduction_To_Computer_Science_-_WEB.pdf,348,1
+98,Why is function important?,4,-3.5757853984832764,The Self-Taught Programmer.pdf,157,0
+98,Why is function important?,5,-3.8678877353668213,Introduction_To_Computer_Science_-_WEB.pdf,348,1
+99,What problem does code solve?,0,2.4623870849609375,50-Coding-Interview-Questions.pdf,5,0
+99,What problem does code solve?,1,-0.09669072926044464,Introduction_To_Computer_Science_-_WEB.pdf,110,1
+99,What problem does code solve?,2,-0.21568262577056885,Introduction_To_Computer_Science_-_WEB.pdf,137,1
+99,What problem does code solve?,3,-0.5687307119369507,Introduction_To_Computer_Science_-_WEB.pdf,45,1
+99,What problem does code solve?,4,-2.0110087394714355,Introduction_To_Computer_Science_-_WEB.pdf,173,1
+99,What problem does code solve?,5,-3.5957400798797607,Introduction_To_Computer_Science_-_WEB.pdf,112,1
+100,When would you use management?,0,-4.133740425109863,Software Engineering at Google.pdf,112,0
+100,When would you use management?,1,-4.133740425109863,Software Engineering at Google-1.pdf,112,0
+100,When would you use management?,2,-5.427018642425537,Preparing-for-College-Success-WEB_s0m0YMs.pdf,75,0
+100,When would you use management?,3,-6.611489295959473,Software Engineering at Google.pdf,112,0
+100,When would you use management?,4,-6.611489295959473,Software Engineering at Google-1.pdf,112,0
+100,When would you use management?,5,-7.688277244567871,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,350,0
+101,What is the relationship between solution and the rest of the topic?,0,-6.794471740722656,College_Success_-_WEB_zQGCJTr.pdf,69,0
+101,What is the relationship between solution and the rest of the topic?,1,-7.317007064819336,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+101,What is the relationship between solution and the rest of the topic?,2,-8.025823593139648,Introduction_To_Computer_Science_-_WEB.pdf,449,1
+101,What is the relationship between solution and the rest of the topic?,3,-9.325142860412598,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,13,0
+101,What is the relationship between solution and the rest of the topic?,4,-9.390378952026367,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+101,What is the relationship between solution and the rest of the topic?,5,-9.727523803710938,Introduction_To_Computer_Science_-_WEB.pdf,64,1
+102,What is patterns?,0,4.904648780822754,Introduction_To_Computer_Science_-_WEB.pdf,518,1
+102,What is patterns?,1,4.4117913246154785,Introduction_To_Computer_Science_-_WEB.pdf,498,1
+102,What is patterns?,2,3.9345638751983643,Introduction_To_Computer_Science_-_WEB.pdf,563,1
+102,What is patterns?,3,3.12249755859375,Introduction_To_Computer_Science_-_WEB.pdf,497,1
+102,What is patterns?,4,2.985504627227783,Introduction_To_Computer_Science_-_WEB.pdf,521,1
+102,What is patterns?,5,2.6635658740997314,Introduction_To_Computer_Science_-_WEB.pdf,524,1
+103,Define characters.,0,-2.465773344039917,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,303,0
+103,Define characters.,1,-2.668189525604248,Introduction_To_Computer_Science_-_WEB.pdf,221,0
+103,Define characters.,2,-2.7900185585021973,The Self-Taught Programmer.pdf,34,0
+103,Define characters.,3,-3.4511821269989014,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,302,0
+103,Define characters.,4,-3.662201166152954,Introduction_To_Computer_Science_-_WEB.pdf,102,0
+103,Define characters.,5,-4.899239540100098,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,944,0
+104,Explain value.,0,-1.4796963930130005,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,83,0
+104,Explain value.,1,-3.200007677078247,The Self-Taught Programmer.pdf,59,0
+104,Explain value.,2,-4.798480033874512,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,863,0
+104,Explain value.,3,-4.849374771118164,Introduction_To_Computer_Science_-_WEB.pdf,332,0
+104,Explain value.,4,-7.419893264770508,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,946,0
+104,Explain value.,5,-7.9975996017456055,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,775,0
+105,How does just work?,0,-4.349811553955078,The Self-Taught Programmer.pdf,147,0
+105,How does just work?,1,-4.384920597076416,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,579,0
+105,How does just work?,2,-4.692536354064941,Introduction_To_Computer_Science_-_WEB.pdf,215,0
+105,How does just work?,3,-4.826638221740723,Introduction_To_Computer_Science_-_WEB.pdf,206,0
+105,How does just work?,4,-5.497014045715332,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,93,0
+105,How does just work?,5,-6.9643449783325195,Introduction_To_Computer_Science_-_WEB.pdf,581,0
+106,Why is static important?,0,0.0007848069071769714,Software Engineering at Google.pdf,445,0
+106,Why is static important?,1,0.0007848069071769714,Software Engineering at Google-1.pdf,445,0
+106,Why is static important?,2,-0.4190603494644165,Software Engineering at Google.pdf,89,0
+106,Why is static important?,3,-0.4190603494644165,Software Engineering at Google-1.pdf,89,0
+106,Why is static important?,4,-1.3033697605133057,Software Engineering at Google.pdf,446,0
+106,Why is static important?,5,-1.3033697605133057,Software Engineering at Google-1.pdf,446,0
+107,What problem does A linker solve?,0,3.4263241291046143,Cracking the coding interview 6th edition.pdf,105,0
+107,What problem does A linker solve?,1,3.4263241291046143,Cracking the coding interview 6th edition-1.pdf,105,0
+107,What problem does A linker solve?,2,2.0423576831817627,Introduction_To_Computer_Science_-_WEB.pdf,284,1
+107,What problem does A linker solve?,3,1.8457738161087036,Introduction_To_Computer_Science_-_WEB.pdf,175,1
+107,What problem does A linker solve?,4,0.15910327434539795,Introduction_To_Computer_Science_-_WEB.pdf,176,1
+107,What problem does A linker solve?,5,-0.9712621569633484,Introduction_To_Computer_Science_-_WEB.pdf,248,1
+108,When would you use What?,0,-2.5674896240234375,College_Success_-_WEB_zQGCJTr.pdf,259,0
+108,When would you use What?,1,-2.8120851516723633,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,945,0
+108,When would you use What?,2,-3.536071538925171,Preparing-for-College-Success-WEB_s0m0YMs.pdf,96,0
+108,When would you use What?,3,-3.5536108016967773,College_Success_Concise.pdf,59,0
+108,When would you use What?,4,-4.556028366088867,Software Engineering at Google.pdf,179,0
+108,When would you use What?,5,-4.556028366088867,Software Engineering at Google-1.pdf,179,0
+109,What is the relationship between part and the rest of the topic?,0,-8.449666976928711,Software Engineering at Google.pdf,29,0
+109,What is the relationship between part and the rest of the topic?,1,-8.449666976928711,Software Engineering at Google-1.pdf,29,0
+109,What is the relationship between part and the rest of the topic?,2,-8.899538040161133,College_Success_-_WEB_zQGCJTr.pdf,221,0
+109,What is the relationship between part and the rest of the topic?,3,-9.414193153381348,Software Engineering at Google.pdf,575,0
+109,What is the relationship between part and the rest of the topic?,4,-9.414193153381348,Software Engineering at Google-1.pdf,575,0
+109,What is the relationship between part and the rest of the topic?,5,-9.453649520874023,College_Success_Concise.pdf,76,0
+110,What is The organization should select and implement the option that?,0,-1.0523264408111572,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,270,1
+110,What is The organization should select and implement the option that?,1,-2.9480113983154297,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,362,1
+110,What is The organization should select and implement the option that?,2,-4.814535140991211,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,194,1
+110,What is The organization should select and implement the option that?,3,-5.803516864776611,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,252,1
+110,What is The organization should select and implement the option that?,4,-6.365135669708252,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,34,1
+110,What is The organization should select and implement the option that?,5,-7.876729965209961,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,459,1
+111,Define organization.,0,0.32380369305610657,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,264,0
+111,Define organization.,1,-0.5408827066421509,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,30,1
+111,Define organization.,2,-3.2928590774536133,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,32,1
+111,Define organization.,3,-3.4811713695526123,Software Engineering at Google.pdf,140,0
+111,Define organization.,4,-3.4811713695526123,Software Engineering at Google-1.pdf,140,0
+111,Define organization.,5,-4.071122646331787,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,264,0
+112,Explain declining.,0,2.8040802478790283,Cracking the coding interview 6th edition.pdf,94,0
+112,Explain declining.,1,2.8040802478790283,Cracking the coding interview 6th edition-1.pdf,94,1
+112,Explain declining.,2,-4.356054306030273,College_Success_-_WEB_zQGCJTr.pdf,145,0
+112,Explain declining.,3,-8.874608993530273,Software Engineering at Google.pdf,345,0
+112,Explain declining.,4,-8.874608993530273,Software Engineering at Google-1.pdf,345,0
+112,Explain declining.,5,-8.951332092285156,Software Engineering at Google.pdf,342,0
+113,How does deadlines work?,0,5.379261493682861,College_Success_Concise.pdf,56,0
+113,How does deadlines work?,1,5.084685802459717,Preparing-for-College-Success-WEB_s0m0YMs.pdf,93,0
+113,How does deadlines work?,2,3.1489858627319336,Preparing-for-College-Success-WEB_s0m0YMs.pdf,83,0
+113,How does deadlines work?,3,3.1489858627319336,College_Success_Concise.pdf,46,0
+113,How does deadlines work?,4,1.9656955003738403,College_Success_-_WEB_zQGCJTr.pdf,98,0
+113,How does deadlines work?,5,1.8174302577972412,Competitive Programmer_s Handbook.pdf,70,0
+114,Why is companies important?,0,-2.0665690898895264,Software Engineering at Google-1.pdf,94,0
+114,Why is companies important?,1,-2.0665690898895264,Software Engineering at Google.pdf,94,0
+114,Why is companies important?,2,-2.584643840789795,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,277,0
+114,Why is companies important?,3,-2.696148157119751,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,459,0
+114,Why is companies important?,4,-3.427248954772949,Software Engineering at Google-1.pdf,87,0
+114,Why is companies important?,5,-3.427248954772949,Software Engineering at Google.pdf,87,0
+115,What problem does group solve?,0,1.843003273010254,Preparing-for-College-Success-WEB_s0m0YMs.pdf,185,0
+115,What problem does group solve?,1,1.7484469413757324,College_Success_Concise.pdf,143,0
+115,What problem does group solve?,2,0.3788885474205017,Software Engineering at Google-1.pdf,137,0
+115,What problem does group solve?,3,0.3788885474205017,Software Engineering at Google.pdf,137,0
+115,What problem does group solve?,4,0.23390549421310425,College_Success_Concise.pdf,144,0
+115,What problem does group solve?,5,-0.3547683358192444,Preparing-for-College-Success-WEB_s0m0YMs.pdf,186,0
+116,When would you use scenario?,0,3.2936291694641113,Introduction_To_Computer_Science_-_WEB.pdf,462,0
+116,When would you use scenario?,1,1.321633219718933,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,840,1
+116,When would you use scenario?,2,0.7799433469772339,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,804,1
+116,When would you use scenario?,3,0.6452785730361938,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,803,1
+116,When would you use scenario?,4,-1.500093936920166,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,803,1
+116,When would you use scenario?,5,-1.8793350458145142,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,806,1
+117,What is the relationship between forecast and the rest of the topic?,0,-4.147721290588379,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,323,0
+117,What is the relationship between forecast and the rest of the topic?,1,-7.199156761169434,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,318,0
+117,What is the relationship between forecast and the rest of the topic?,2,-8.089981079101562,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,338,0
+117,What is the relationship between forecast and the rest of the topic?,3,-8.501676559448242,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,321,0
+117,What is the relationship between forecast and the rest of the topic?,4,-8.648816108703613,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,314,0
+117,What is the relationship between forecast and the rest of the topic?,5,-8.656243324279785,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,803,1
+118,What is bill?,0,-1.9595603942871094,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,351,0
+118,What is bill?,1,-3.05143666267395,The Self-Taught Programmer.pdf,95,1
+118,What is bill?,2,-3.323883295059204,Software Engineering at Google-1.pdf,123,0
+118,What is bill?,3,-3.323883295059204,Software Engineering at Google.pdf,123,0
+118,What is bill?,4,-6.315098762512207,Cracking the coding interview 6th edition-1.pdf,697,0
+118,What is bill?,5,-6.315098762512207,Cracking the coding interview 6th edition.pdf,697,0
+119,Define value.,0,-0.7429732084274292,The Self-Taught Programmer.pdf,59,1
+119,Define value.,1,-1.257684350013733,College_Success_-_WEB_zQGCJTr.pdf,115,0
+119,Define value.,2,-2.2749555110931396,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,83,0
+119,Define value.,3,-3.7795393466949463,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,857,0
+119,Define value.,4,-3.996443510055542,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,61,0
+119,Define value.,5,-5.27536678314209,College_Success_-_WEB_zQGCJTr.pdf,116,0
+120,Explain dictionary.,0,-1.6105870008468628,The Self-Taught Programmer.pdf,101,1
+120,Explain dictionary.,1,-4.039485931396484,The Self-Taught Programmer.pdf,101,1
+120,Explain dictionary.,2,-5.057402610778809,The Self-Taught Programmer.pdf,92,1
+120,Explain dictionary.,3,-5.698283672332764,The Self-Taught Programmer.pdf,96,1
+120,Explain dictionary.,4,-6.13270378112793,Preparing-for-College-Success-WEB_s0m0YMs.pdf,155,0
+120,Explain dictionary.,5,-6.437535285949707,Cracking the coding interview 6th edition-1.pdf,201,0
+121,How does code work?,0,1.3884375095367432,The Self-Taught Programmer.pdf,23,0
+121,How does code work?,1,0.49706995487213135,Introduction_To_Computer_Science_-_WEB.pdf,173,0
+121,How does code work?,2,0.25644487142562866,Introduction_To_Computer_Science_-_WEB.pdf,173,0
+121,How does code work?,3,-0.6580711007118225,Introduction_To_Computer_Science_-_WEB.pdf,245,0
+121,How does code work?,4,-2.500617504119873,The Self-Taught Programmer.pdf,51,0
+121,How does code work?,5,-3.0171213150024414,Introduction_To_Computer_Science_-_WEB.pdf,157,0
+122,Why is author important?,0,4.116766929626465,College_Success_Concise.pdf,76,0
+122,Why is author important?,1,3.9069161415100098,College_Success_-_WEB_zQGCJTr.pdf,155,0
+122,Why is author important?,2,1.5231832265853882,Preparing-for-College-Success-WEB_s0m0YMs.pdf,119,0
+122,Why is author important?,3,-6.032137870788574,Preparing-for-College-Success-WEB_s0m0YMs.pdf,111,0
+122,Why is author important?,4,-6.538715362548828,College_Success_Concise.pdf,80,0
+122,Why is author important?,5,-7.493474960327148,College_Success_-_WEB_zQGCJTr.pdf,152,0
+123,What problem does Comprehension of Code A code review typically solve?,0,5.781685829162598,Software Engineering at Google.pdf,200,1
+123,What problem does Comprehension of Code A code review typically solve?,1,5.781685829162598,Software Engineering at Google-1.pdf,200,0
+123,What problem does Comprehension of Code A code review typically solve?,2,3.0535364151000977,Software Engineering at Google.pdf,200,1
+123,What problem does Comprehension of Code A code review typically solve?,3,3.0535364151000977,Software Engineering at Google-1.pdf,200,0
+123,What problem does Comprehension of Code A code review typically solve?,4,2.9601335525512695,Software Engineering at Google-1.pdf,201,0
+123,What problem does Comprehension of Code A code review typically solve?,5,2.9601335525512695,Software Engineering at Google.pdf,201,1
+124,When would you use izabelle?,0,-10.388020515441895,Preparing-for-College-Success-WEB_s0m0YMs.pdf,96,0
+124,When would you use izabelle?,1,-10.393072128295898,College_Success_Concise.pdf,59,0
+124,When would you use izabelle?,2,-10.620219230651855,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,153,0
+124,When would you use izabelle?,3,-11.092777252197266,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,97,1
+124,When would you use izabelle?,4,-11.240447998046875,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,136,0
+124,When would you use izabelle?,5,-11.268317222595215,Preparing-for-College-Success-WEB_s0m0YMs.pdf,162,0
+125,What is the relationship between This and the rest of the topic?,0,-6.528273582458496,College_Success_-_WEB_zQGCJTr.pdf,151,0
+125,What is the relationship between This and the rest of the topic?,1,-6.649848937988281,College_Success_Concise.pdf,72,0
+125,What is the relationship between This and the rest of the topic?,2,-9.913257598876953,College_Success_-_WEB_zQGCJTr.pdf,51,0
+125,What is the relationship between This and the rest of the topic?,3,-10.106698036193848,Software Engineering at Google-1.pdf,29,0
+125,What is the relationship between This and the rest of the topic?,4,-10.106698036193848,Software Engineering at Google.pdf,29,0
+125,What is the relationship between This and the rest of the topic?,5,-10.502685546875,Software Engineering at Google-1.pdf,575,0
+126,What is excel?,0,2.6368722915649414,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,858,1
+126,What is excel?,1,1.7527389526367188,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,606,1
+126,What is excel?,2,1.7211614847183228,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,669,1
+126,What is excel?,3,0.9653921127319336,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,755,1
+126,What is excel?,4,0.40164655447006226,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,608,1
+126,What is excel?,5,0.18038474023342133,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,879,1
+127,Define available.,0,-3.6836090087890625,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,158,0
+127,Define available.,1,-5.430922031402588,Introduction_To_Computer_Science_-_WEB.pdf,832,0
+127,Define available.,2,-5.607353687286377,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,274,0
+127,Define available.,3,-5.6181182861328125,Introduction_To_Computer_Science_-_WEB.pdf,832,0
+127,Define available.,4,-6.1207685470581055,Introduction_To_Computer_Science_-_WEB.pdf,832,0
+127,Define available.,5,-8.204164505004883,Introduction_To_Computer_Science_-_WEB.pdf,532,0
+128,Explain word.,0,-2.6826276779174805,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,154,1
+128,Explain word.,1,-6.276813507080078,Preparing-for-College-Success-WEB_s0m0YMs.pdf,155,0
+128,Explain word.,2,-6.941093921661377,Cracking the coding interview 6th edition-1.pdf,631,0
+128,Explain word.,3,-6.941093921661377,Cracking the coding interview 6th edition.pdf,631,0
+128,Explain word.,4,-7.3676910400390625,Cracking the coding interview 6th edition-1.pdf,201,0
+128,Explain word.,5,-7.3676910400390625,Cracking the coding interview 6th edition.pdf,201,0
+129,How does tabs work?,0,7.301423072814941,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,154,1
+129,How does tabs work?,1,4.939471244812012,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,154,1
+129,How does tabs work?,2,3.0548934936523438,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,101,1
+129,How does tabs work?,3,2.7272257804870605,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,155,1
+129,How does tabs work?,4,1.646347999572754,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,158,1
+129,How does tabs work?,5,0.35864654183387756,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,116,1
+130,Why is development important?,0,-0.20836523175239563,Introduction_To_Computer_Science_-_WEB.pdf,468,0
+130,Why is development important?,1,-3.3108835220336914,Software Engineering at Google.pdf,45,1
+130,Why is development important?,2,-3.3108835220336914,Software Engineering at Google-1.pdf,45,0
+130,Why is development important?,3,-3.6171038150787354,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,346,0
+130,Why is development important?,4,-4.60113525390625,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,346,0
+130,Why is development important?,5,-5.9893798828125,Software Engineering at Google-1.pdf,235,0
+131,What problem does measure solve?,0,-0.1350262612104416,Introduction_To_Computer_Science_-_WEB.pdf,143,0
+131,What problem does measure solve?,1,-0.2873561382293701,College_Success_-_WEB_zQGCJTr.pdf,69,0
+131,What problem does measure solve?,2,-0.33384284377098083,Introduction_To_Computer_Science_-_WEB.pdf,110,0
+131,What problem does measure solve?,3,-3.343120813369751,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,138,0
+131,What problem does measure solve?,4,-4.037812232971191,Competitive Programmer_s Handbook.pdf,241,0
+131,What problem does measure solve?,5,-4.870459079742432,College_Success_-_WEB_zQGCJTr.pdf,221,0
+132,When would you use goal?,0,0.5127376317977905,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,808,0
+132,When would you use goal?,1,-1.6707634925842285,Preparing-for-College-Success-WEB_s0m0YMs.pdf,261,0
+132,When would you use goal?,2,-2.0129268169403076,College_Success_-_WEB_zQGCJTr.pdf,101,0
+132,When would you use goal?,3,-2.0173356533050537,College_Success_Concise.pdf,209,0
+132,When would you use goal?,4,-2.0966639518737793,College_Success_Concise.pdf,213,0
+132,When would you use goal?,5,-2.308561325073242,College_Success_-_WEB_zQGCJTr.pdf,119,0
+133,What is the relationship between liba and the rest of the topic?,0,-4.34549617767334,Software Engineering at Google-1.pdf,460,1
+133,What is the relationship between liba and the rest of the topic?,1,-4.34549617767334,Software Engineering at Google.pdf,460,0
+133,What is the relationship between liba and the rest of the topic?,2,-5.868007183074951,Software Engineering at Google.pdf,476,0
+133,What is the relationship between liba and the rest of the topic?,3,-5.868007183074951,Software Engineering at Google-1.pdf,476,1
+133,What is the relationship between liba and the rest of the topic?,4,-6.32991361618042,Software Engineering at Google-1.pdf,461,1
+133,What is the relationship between liba and the rest of the topic?,5,-6.32991361618042,Software Engineering at Google.pdf,461,0
+134,What is accurate?,0,-1.4577758312225342,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,56,0
+134,What is accurate?,1,-2.0743091106414795,Cracking the coding interview 6th edition.pdf,39,0
+134,What is accurate?,2,-2.0743091106414795,Cracking the coding interview 6th edition-1.pdf,39,0
+134,What is accurate?,3,-2.3861775398254395,Software Engineering at Google.pdf,156,0
+134,What is accurate?,4,-2.3861775398254395,Software Engineering at Google-1.pdf,156,1
+134,What is accurate?,5,-2.887923002243042,Introduction_To_Computer_Science_-_WEB.pdf,115,0
+135,Define version.,0,-0.8072344064712524,Software Engineering at Google.pdf,468,0
+135,Define version.,1,-0.8072344064712524,Software Engineering at Google-1.pdf,468,1
+135,Define version.,2,-2.991851806640625,Software Engineering at Google.pdf,468,0
+135,Define version.,3,-2.991851806640625,Software Engineering at Google-1.pdf,468,1
+135,Define version.,4,-4.193846225738525,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,219,0
+135,Define version.,5,-4.3388519287109375,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,218,0
+136,Explain following.,0,-6.1465325355529785,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,63,0
+136,Explain following.,1,-6.660388946533203,Preparing-for-College-Success-WEB_s0m0YMs.pdf,155,0
+136,Explain following.,2,-6.923354148864746,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,306,0
+136,Explain following.,3,-7.290604114532471,Cracking the coding interview 6th edition.pdf,338,0
+136,Explain following.,4,-7.290604114532471,Cracking the coding interview 6th edition-1.pdf,338,0
+136,Explain following.,5,-8.626531600952148,Competitive Programmer_s Handbook.pdf,2,1
+137,How does binary work?,0,2.1784474849700928,Introduction_To_Computer_Science_-_WEB.pdf,218,0
+137,How does binary work?,1,1.2308855056762695,Introduction_To_Computer_Science_-_WEB.pdf,218,0
+137,How does binary work?,2,0.15841107070446014,Cracking the coding interview 6th edition.pdf,474,0
+137,How does binary work?,3,0.15841107070446014,Cracking the coding interview 6th edition-1.pdf,474,0
+137,How does binary work?,4,-1.3480817079544067,Introduction_To_Computer_Science_-_WEB.pdf,159,0
+137,How does binary work?,5,-1.4340109825134277,Introduction_To_Computer_Science_-_WEB.pdf,218,0
+138,Why is range important?,0,-2.820889711380005,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,702,0
+138,Why is range important?,1,-4.572888374328613,Competitive Programmer_s Handbook.pdf,104,1
+138,Why is range important?,2,-4.999422073364258,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,686,0
+138,Why is range important?,3,-5.9365034103393555,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,835,0
+138,Why is range important?,4,-6.792366981506348,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,95,0
+138,Why is range important?,5,-7.036674499511719,Preparing-for-College-Success-WEB_s0m0YMs.pdf,262,0
+139,What problem does affordable solve?,0,-1.9082486629486084,College_Success_-_WEB_zQGCJTr.pdf,227,0
+139,What problem does affordable solve?,1,-5.555583953857422,Preparing-for-College-Success-WEB_s0m0YMs.pdf,241,0
+139,What problem does affordable solve?,2,-6.974458694458008,Introduction_To_Computer_Science_-_WEB.pdf,187,1
+139,What problem does affordable solve?,3,-8.078548431396484,Preparing-for-College-Success-WEB_s0m0YMs.pdf,239,0
+139,What problem does affordable solve?,4,-8.27551555633545,Introduction_To_Computer_Science_-_WEB.pdf,531,1
+139,What problem does affordable solve?,5,-8.605741500854492,College_Success_-_WEB_zQGCJTr.pdf,405,0
+140,What is the relationship between arstechnica and the rest of the topic?,0,-11.045114517211914,Introduction_To_Computer_Science_-_WEB.pdf,847,1
+140,What is the relationship between arstechnica and the rest of the topic?,1,-11.156657218933105,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,212,0
+140,What is the relationship between arstechnica and the rest of the topic?,2,-11.284717559814453,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,498,0
+140,What is the relationship between arstechnica and the rest of the topic?,3,-11.288503646850586,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,395,0
+140,What is the relationship between arstechnica and the rest of the topic?,4,-11.295421600341797,Cracking the coding interview 6th edition.pdf,45,0
+140,What is the relationship between arstechnica and the rest of the topic?,5,-11.295421600341797,Cracking the coding interview 6th edition-1.pdf,45,0
+141,What is drive?,0,3.9184024333953857,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,143,1
+141,What is drive?,1,3.402096748352051,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,86,1
+141,What is drive?,2,0.09194839745759964,Introduction_To_Computer_Science_-_WEB.pdf,237,0
+141,What is drive?,3,-0.39283064007759094,Introduction_To_Computer_Science_-_WEB.pdf,238,0
+141,What is drive?,4,-0.7229849100112915,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,142,1
+141,What is drive?,5,-2.0249571800231934,Introduction_To_Computer_Science_-_WEB.pdf,265,0
+142,Define Google Docs.,0,5.400681972503662,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,192,1
+142,Define Google Docs.,1,3.18424654006958,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,264,0
+142,Define Google Docs.,2,2.510345458984375,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,409,1
+142,Define Google Docs.,3,2.296360969543457,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,187,1
+142,Define Google Docs.,4,1.4014613628387451,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,292,1
+142,Define Google Docs.,5,0.9336942434310913,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,193,1
+143,Explain create.,0,0.24810053408145905,SQL Tutorial.pdf,54,0
+143,Explain create.,1,-0.7917253375053406,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,147,0
+143,Explain create.,2,-3.2582459449768066,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,467,0
+143,Explain create.,3,-5.234050273895264,Introduction_To_Computer_Science_-_WEB.pdf,468,0
+143,Explain create.,4,-5.716179847717285,Introduction_To_Computer_Science_-_WEB.pdf,456,0
+143,Explain create.,5,-5.990802764892578,Introduction_To_Computer_Science_-_WEB.pdf,476,0
+144,How does allows work?,0,-2.7802138328552246,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,31,0
+144,How does allows work?,1,-6.519552707672119,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,105,0
+144,How does allows work?,2,-7.047417640686035,Introduction_To_Computer_Science_-_WEB.pdf,532,0
+144,How does allows work?,3,-7.379729270935059,Introduction_To_Computer_Science_-_WEB.pdf,491,0
+144,How does allows work?,4,-7.622650146484375,Introduction_To_Computer_Science_-_WEB.pdf,259,0
+144,How does allows work?,5,-7.976492881774902,Introduction_To_Computer_Science_-_WEB.pdf,804,0
+145,Why is memory important?,0,2.4359142780303955,College_Success_Concise.pdf,104,0
+145,Why is memory important?,1,2.4157204627990723,College_Success_Concise.pdf,104,0
+145,Why is memory important?,2,1.7092481851577759,Preparing-for-College-Success-WEB_s0m0YMs.pdf,145,0
+145,Why is memory important?,3,-0.4302230775356293,College_Success_Concise.pdf,105,0
+145,Why is memory important?,4,-0.6409634947776794,Preparing-for-College-Success-WEB_s0m0YMs.pdf,145,0
+145,Why is memory important?,5,-1.4814773797988892,College_Success_Concise.pdf,105,0
+146,What problem does across solve?,0,-1.4949798583984375,Introduction_To_Computer_Science_-_WEB.pdf,32,0
+146,What problem does across solve?,1,-3.5264501571655273,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+146,What problem does across solve?,2,-3.6634292602539062,Introduction_To_Computer_Science_-_WEB.pdf,125,0
+146,What problem does across solve?,3,-3.995591163635254,Cracking the coding interview 6th edition-1.pdf,142,0
+146,What problem does across solve?,4,-3.995591163635254,Cracking the coding interview 6th edition.pdf,142,0
+146,What problem does across solve?,5,-4.259529113769531,Software Engineering at Google-1.pdf,137,0
+147,When would you use google?,0,-0.8225453495979309,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,119,0
+147,When would you use google?,1,-5.638644218444824,Software Engineering at Google.pdf,138,0
+147,When would you use google?,2,-5.638644218444824,Software Engineering at Google-1.pdf,138,1
+147,When would you use google?,3,-7.0443115234375,Software Engineering at Google.pdf,587,0
+147,When would you use google?,4,-7.0443115234375,Software Engineering at Google-1.pdf,587,1
+147,When would you use google?,5,-7.2001423835754395,Software Engineering at Google.pdf,238,0
+148,What is the relationship between link and the rest of the topic?,0,-4.394993782043457,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,873,0
+148,What is the relationship between link and the rest of the topic?,1,-5.005068778991699,Introduction_To_Computer_Science_-_WEB.pdf,175,0
+148,What is the relationship between link and the rest of the topic?,2,-7.0568318367004395,Software Engineering at Google-1.pdf,88,1
+148,What is the relationship between link and the rest of the topic?,3,-7.0568318367004395,Software Engineering at Google.pdf,88,0
+148,What is the relationship between link and the rest of the topic?,4,-7.638626575469971,Software Engineering at Google.pdf,88,0
+148,What is the relationship between link and the rest of the topic?,5,-8.813133239746094,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1018,0
+149,What is content?,0,0.6790716648101807,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,593,0
+149,What is content?,1,0.11758547276258469,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,554,0
+149,What is content?,2,-0.5897756814956665,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,551,0
+149,What is content?,3,-0.6676092147827148,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,552,0
+149,What is content?,4,-1.5627689361572266,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,597,0
+149,What is content?,5,-2.0449938774108887,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,561,0
+150,Define land.,0,-6.667486190795898,Cracking the coding interview 6th edition-1.pdf,196,1
+150,Define land.,1,-6.667486190795898,Cracking the coding interview 6th edition.pdf,196,0
+150,Define land.,2,-6.798750877380371,Introduction_To_Computer_Science_-_WEB.pdf,564,0
+150,Define land.,3,-6.834512710571289,Cracking the coding interview 6th edition.pdf,515,0
+150,Define land.,4,-6.834512710571289,Cracking the coding interview 6th edition-1.pdf,515,1
+150,Define land.,5,-7.392475128173828,Cracking the coding interview 6th edition.pdf,516,0
+151,Explain right.,0,-6.047046661376953,Cracking the coding interview 6th edition.pdf,461,0
+151,Explain right.,1,-6.047046661376953,Cracking the coding interview 6th edition-1.pdf,461,1
+151,Explain right.,2,-7.182353973388672,Software Engineering at Google.pdf,77,0
+151,Explain right.,3,-7.5076823234558105,SQL Tutorial.pdf,1,0
+151,Explain right.,4,-8.723810195922852,College_Success_Concise.pdf,114,0
+151,Explain right.,5,-9.598150253295898,Competitive Programmer_s Handbook.pdf,2,0
+152,How does pointers work?,0,5.6544036865234375,Cracking the coding interview 6th edition-1.pdf,174,1
+152,How does pointers work?,1,5.6544036865234375,Cracking the coding interview 6th edition.pdf,174,0
+152,How does pointers work?,2,2.018435478210449,Introduction_To_Computer_Science_-_WEB.pdf,172,0
+152,How does pointers work?,3,1.8188650608062744,Introduction_To_Computer_Science_-_WEB.pdf,170,0
+152,How does pointers work?,4,1.4291471242904663,Introduction_To_Computer_Science_-_WEB.pdf,172,0
+152,How does pointers work?,5,1.0699493885040283,Introduction_To_Computer_Science_-_WEB.pdf,273,0
+153,Why is cyber important?,0,1.743622064590454,Introduction_To_Computer_Science_-_WEB.pdf,914,1
+153,Why is cyber important?,1,1.2765545845031738,Introduction_To_Computer_Science_-_WEB.pdf,19,1
+153,Why is cyber important?,2,1.1724212169647217,Introduction_To_Computer_Science_-_WEB.pdf,919,1
+153,Why is cyber important?,3,-0.5205317735671997,Introduction_To_Computer_Science_-_WEB.pdf,853,1
+153,Why is cyber important?,4,-0.838271975517273,Introduction_To_Computer_Science_-_WEB.pdf,827,1
+153,Why is cyber important?,5,-3.3833656311035156,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,40,0
+154,What problem does against solve?,0,0.7056002616882324,College_Success_-_WEB_zQGCJTr.pdf,69,0
+154,What problem does against solve?,1,0.10359417647123337,College_Success_-_WEB_zQGCJTr.pdf,227,0
+154,What problem does against solve?,2,-2.2018990516662598,Introduction_To_Computer_Science_-_WEB.pdf,110,1
+154,What problem does against solve?,3,-2.4424855709075928,Software Engineering at Google.pdf,137,0
+154,What problem does against solve?,4,-2.4424855709075928,Software Engineering at Google-1.pdf,137,0
+154,What problem does against solve?,5,-3.3771259784698486,Cracking the coding interview 6th edition.pdf,133,0
+155,When would you use metaverse?,0,2.8935327529907227,Introduction_To_Computer_Science_-_WEB.pdf,840,1
+155,When would you use metaverse?,1,2.8159523010253906,Introduction_To_Computer_Science_-_WEB.pdf,801,1
+155,When would you use metaverse?,2,2.0670361518859863,Introduction_To_Computer_Science_-_WEB.pdf,840,1
+155,When would you use metaverse?,3,1.5891300439834595,Introduction_To_Computer_Science_-_WEB.pdf,840,1
+155,When would you use metaverse?,4,1.3766107559204102,Introduction_To_Computer_Science_-_WEB.pdf,801,1
+155,When would you use metaverse?,5,1.235868215560913,Introduction_To_Computer_Science_-_WEB.pdf,845,1
+156,What is the relationship between capable and the rest of the topic?,0,-5.316267013549805,Introduction_To_Computer_Science_-_WEB.pdf,453,0
+156,What is the relationship between capable and the rest of the topic?,1,-7.323866367340088,Software Engineering at Google.pdf,40,0
+156,What is the relationship between capable and the rest of the topic?,2,-7.323866367340088,Software Engineering at Google-1.pdf,40,1
+156,What is the relationship between capable and the rest of the topic?,3,-8.650581359863281,Introduction_To_Computer_Science_-_WEB.pdf,832,0
+156,What is the relationship between capable and the rest of the topic?,4,-9.829841613769531,Introduction_To_Computer_Science_-_WEB.pdf,832,0
+156,What is the relationship between capable and the rest of the topic?,5,-10.407166481018066,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,36,0
+157,What is know?,0,3.5163629055023193,Introduction_To_Computer_Science_-_WEB.pdf,437,0
+157,What is know?,1,-1.5808308124542236,Software Engineering at Google.pdf,76,0
+157,What is know?,2,-1.5808308124542236,Software Engineering at Google-1.pdf,76,1
+157,What is know?,3,-1.6756166219711304,Software Engineering at Google.pdf,81,0
+157,What is know?,4,-1.6756166219711304,Software Engineering at Google-1.pdf,81,1
+157,What is know?,5,-1.6916296482086182,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,454,0
+158,Define efficiency.,0,3.6692466735839844,Cracking the coding interview 6th edition.pdf,89,0
+158,Define efficiency.,1,3.6692466735839844,Cracking the coding interview 6th edition-1.pdf,89,0
+158,Define efficiency.,2,-1.7606627941131592,Software Engineering at Google-1.pdf,39,1
+158,Define efficiency.,3,-1.7606627941131592,Software Engineering at Google.pdf,39,0
+158,Define efficiency.,4,-2.1031875610351562,Software Engineering at Google-1.pdf,41,1
+158,Define efficiency.,5,-2.1031875610351562,Software Engineering at Google.pdf,41,0
+159,Explain metadata.,0,1.8782312870025635,Introduction_To_Computer_Science_-_WEB.pdf,378,1
+159,Explain metadata.,1,1.0431472063064575,Introduction_To_Computer_Science_-_WEB.pdf,378,1
+159,Explain metadata.,2,-0.9997121691703796,Introduction_To_Computer_Science_-_WEB.pdf,777,1
+159,Explain metadata.,3,-1.119057536125183,Introduction_To_Computer_Science_-_WEB.pdf,378,1
+159,Explain metadata.,4,-1.2579034566879272,Introduction_To_Computer_Science_-_WEB.pdf,77,1
+159,Explain metadata.,5,-2.1950008869171143,Introduction_To_Computer_Science_-_WEB.pdf,378,1
+160,How does aspects work?,0,-5.344230651855469,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,472,0
+160,How does aspects work?,1,-5.360750198364258,Introduction_To_Computer_Science_-_WEB.pdf,463,1
+160,How does aspects work?,2,-6.318564414978027,Introduction_To_Computer_Science_-_WEB.pdf,563,1
+160,How does aspects work?,3,-7.848581314086914,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,146,0
+160,How does aspects work?,4,-7.877902984619141,Introduction_To_Computer_Science_-_WEB.pdf,74,1
+160,How does aspects work?,5,-7.9209184646606445,Introduction_To_Computer_Science_-_WEB.pdf,464,1
+161,Why is cataloging important?,0,0.1559535712003708,Introduction_To_Computer_Science_-_WEB.pdf,378,1
+161,Why is cataloging important?,1,-0.6581900119781494,Introduction_To_Computer_Science_-_WEB.pdf,572,1
+161,Why is cataloging important?,2,-5.836698532104492,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,586,0
+161,Why is cataloging important?,3,-7.718273162841797,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,868,0
+161,Why is cataloging important?,4,-7.987914085388184,Introduction_To_Computer_Science_-_WEB.pdf,376,1
+161,Why is cataloging important?,5,-10.134309768676758,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,307,0
+162,What problem does design solve?,0,4.996421813964844,Introduction_To_Computer_Science_-_WEB.pdf,498,0
+162,What problem does design solve?,1,2.3475534915924072,Introduction_To_Computer_Science_-_WEB.pdf,95,0
+162,What problem does design solve?,2,1.8104019165039062,Introduction_To_Computer_Science_-_WEB.pdf,112,0
+162,What problem does design solve?,3,1.1872117519378662,Introduction_To_Computer_Science_-_WEB.pdf,79,0
+162,What problem does design solve?,4,0.9538793563842773,Introduction_To_Computer_Science_-_WEB.pdf,519,0
+162,What problem does design solve?,5,0.8645280599594116,Introduction_To_Computer_Science_-_WEB.pdf,49,0
+163,When would you use Layout View Layout View?,0,5.138321399688721,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,971,1
+163,When would you use Layout View Layout View?,1,4.05578088760376,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,981,1
+163,When would you use Layout View Layout View?,2,3.5218565464019775,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,971,1
+163,When would you use Layout View Layout View?,3,2.7496836185455322,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,982,1
+163,When would you use Layout View Layout View?,4,-0.3577558994293213,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,938,1
+163,When would you use Layout View Layout View?,5,-1.602123498916626,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,475,1
+164,What is the relationship between view and the rest of the topic?,0,-3.916750431060791,Introduction_To_Computer_Science_-_WEB.pdf,582,0
+164,What is the relationship between view and the rest of the topic?,1,-5.175390243530273,Introduction_To_Computer_Science_-_WEB.pdf,83,0
+164,What is the relationship between view and the rest of the topic?,2,-5.675773620605469,SQL Tutorial.pdf,117,0
+164,What is the relationship between view and the rest of the topic?,3,-6.632472991943359,College_Success_-_WEB_zQGCJTr.pdf,413,0
+164,What is the relationship between view and the rest of the topic?,4,-7.680407524108887,Introduction_To_Computer_Science_-_WEB.pdf,579,0
+164,What is the relationship between view and the rest of the topic?,5,-7.708775997161865,Introduction_To_Computer_Science_-_WEB.pdf,81,0
+165,What is optimize?,0,4.235867023468018,Introduction_To_Computer_Science_-_WEB.pdf,357,0
+165,What is optimize?,1,2.9643795490264893,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,74,0
+165,What is optimize?,2,2.2749719619750977,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,585,0
+165,What is optimize?,3,1.7679977416992188,Introduction_To_Computer_Science_-_WEB.pdf,361,0
+165,What is optimize?,4,0.7968957424163818,Introduction_To_Computer_Science_-_WEB.pdf,361,0
+165,What is optimize?,5,-0.3346487283706665,Introduction_To_Computer_Science_-_WEB.pdf,361,0
+166,Define read.,0,-0.2826139032840729,Preparing-for-College-Success-WEB_s0m0YMs.pdf,113,0
+166,Define read.,1,-0.5585894584655762,College_Success_-_WEB_zQGCJTr.pdf,148,0
+166,Define read.,2,-1.0228486061096191,College_Success_Concise.pdf,75,0
+166,Define read.,3,-1.1154427528381348,College_Success_Concise.pdf,66,0
+166,Define read.,4,-1.2479519844055176,College_Success_-_WEB_zQGCJTr.pdf,152,0
+166,Define read.,5,-1.3612213134765625,College_Success_-_WEB_zQGCJTr.pdf,153,0
+167,Explain cost.,0,0.10966990143060684,Software Engineering at Google.pdf,46,1
+167,Explain cost.,1,0.10966990143060684,Software Engineering at Google-1.pdf,46,0
+167,Explain cost.,2,-3.0842127799987793,Software Engineering at Google-1.pdf,46,0
+167,Explain cost.,3,-3.0842127799987793,Software Engineering at Google.pdf,46,1
+167,Explain cost.,4,-6.152839660644531,Software Engineering at Google-1.pdf,49,0
+167,Explain cost.,5,-6.152839660644531,Software Engineering at Google.pdf,49,1
+168,How does item work?,0,-0.10027696192264557,College_Success_-_WEB_zQGCJTr.pdf,187,0
+168,How does item work?,1,-0.3405930995941162,College_Success_Concise.pdf,106,0
+168,How does item work?,2,-1.622429609298706,Preparing-for-College-Success-WEB_s0m0YMs.pdf,147,0
+168,How does item work?,3,-2.050187349319458,The Self-Taught Programmer.pdf,249,1
+168,How does item work?,4,-2.174260139465332,The Self-Taught Programmer.pdf,249,1
+168,How does item work?,5,-2.49129581451416,The Self-Taught Programmer.pdf,85,1
+169,Why is http important?,0,5.853137493133545,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,181,0
+169,Why is http important?,1,-0.8631361722946167,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,41,0
+169,Why is http important?,2,-1.0670044422149658,Introduction_To_Computer_Science_-_WEB.pdf,899,0
+169,Why is http important?,3,-1.275464653968811,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,180,0
+169,Why is http important?,4,-1.6070175170898438,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,44,0
+169,Why is http important?,5,-3.2378652095794678,Introduction_To_Computer_Science_-_WEB.pdf,576,0
+170,What problem does stack solve?,0,-1.3436479568481445,Cracking the coding interview 6th edition.pdf,246,0
+170,What problem does stack solve?,1,-1.3436479568481445,Cracking the coding interview 6th edition-1.pdf,246,0
+170,What problem does stack solve?,2,-2.055021286010742,Cracking the coding interview 6th edition.pdf,246,0
+170,What problem does stack solve?,3,-2.055021286010742,Cracking the coding interview 6th edition-1.pdf,246,0
+170,What problem does stack solve?,4,-3.335134267807007,Cracking the coding interview 6th edition-1.pdf,109,0
+170,What problem does stack solve?,5,-3.335134267807007,Cracking the coding interview 6th edition.pdf,109,0
+171,When would you use column?,0,-1.6582417488098145,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,637,1
+171,When would you use column?,1,-2.09647798538208,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,608,1
+171,When would you use column?,2,-3.8189306259155273,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,744,1
+171,When would you use column?,3,-4.792887210845947,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,771,1
+171,When would you use column?,4,-5.117629528045654,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,608,1
+171,When would you use column?,5,-6.74847412109375,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,686,1
+172,What is the relationship between spreadsheet and the rest of the topic?,0,-0.5910724401473999,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,680,1
+172,What is the relationship between spreadsheet and the rest of the topic?,1,-3.187209129333496,Introduction_To_Computer_Science_-_WEB.pdf,30,0
+172,What is the relationship between spreadsheet and the rest of the topic?,2,-3.3008456230163574,Introduction_To_Computer_Science_-_WEB.pdf,31,0
+172,What is the relationship between spreadsheet and the rest of the topic?,3,-3.979714870452881,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,669,1
+172,What is the relationship between spreadsheet and the rest of the topic?,4,-4.574511528015137,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,605,1
+172,What is the relationship between spreadsheet and the rest of the topic?,5,-4.768942832946777,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,606,1
+173,What is values?,0,2.4629788398742676,College_Success_-_WEB_zQGCJTr.pdf,115,0
+173,What is values?,1,-0.6745963096618652,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,83,0
+173,What is values?,2,-0.9573208689689636,College_Success_-_WEB_zQGCJTr.pdf,116,0
+173,What is values?,3,-3.527092695236206,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,758,1
+173,What is values?,4,-3.6635844707489014,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,702,1
+173,What is values?,5,-4.887825012207031,Introduction_To_Computer_Science_-_WEB.pdf,379,0
+174,Define databases.,0,6.417458534240723,Introduction_To_Computer_Science_-_WEB.pdf,383,0
+174,Define databases.,1,5.016849040985107,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,875,1
+174,Define databases.,2,4.859630107879639,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,869,1
+174,Define databases.,3,3.2679829597473145,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,868,1
+174,Define databases.,4,2.9367618560791016,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,873,1
+174,Define databases.,5,2.5622730255126953,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,872,1
+175,Explain warehouse.,0,6.8395094871521,Introduction_To_Computer_Science_-_WEB.pdf,413,0
+175,Explain warehouse.,1,2.416159152984619,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,871,1
+175,Explain warehouse.,2,1.7093088626861572,Introduction_To_Computer_Science_-_WEB.pdf,413,0
+175,Explain warehouse.,3,-1.4788813591003418,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,870,1
+175,Explain warehouse.,4,-1.6736493110656738,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,867,1
+175,Explain warehouse.,5,-1.7271065711975098,Introduction_To_Computer_Science_-_WEB.pdf,415,0
+176,How does shopping work?,0,-1.4594788551330566,College_Success_-_WEB_zQGCJTr.pdf,110,0
+176,How does shopping work?,1,-1.9559729099273682,Introduction_To_Computer_Science_-_WEB.pdf,64,0
+176,How does shopping work?,2,-2.8986990451812744,Introduction_To_Computer_Science_-_WEB.pdf,64,0
+176,How does shopping work?,3,-3.113387107849121,Introduction_To_Computer_Science_-_WEB.pdf,375,0
+176,How does shopping work?,4,-3.546112298965454,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,68,0
+176,How does shopping work?,5,-4.594568729400635,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,53,1
+177,Why is technology important?,0,6.243649482727051,College_Success_-_WEB_zQGCJTr.pdf,247,0
+177,Why is technology important?,1,1.9092354774475098,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,36,0
+177,Why is technology important?,2,0.05793313309550285,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,24,0
+177,Why is technology important?,3,-0.22584843635559082,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,387,0
+177,Why is technology important?,4,-0.8541104197502136,Introduction_To_Computer_Science_-_WEB.pdf,28,1
+177,Why is technology important?,5,-1.3569936752319336,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,464,0
+178,What problem does management solve?,0,3.7802298069000244,College_Success_-_WEB_zQGCJTr.pdf,228,0
+178,What problem does management solve?,1,0.7031859159469604,College_Success_-_WEB_zQGCJTr.pdf,227,0
+178,What problem does management solve?,2,-0.4288700222969055,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,82,0
+178,What problem does management solve?,3,-1.3156204223632812,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,139,0
+178,What problem does management solve?,4,-1.32289719581604,Introduction_To_Computer_Science_-_WEB.pdf,517,1
+178,What problem does management solve?,5,-2.49881649017334,Software Engineering at Google.pdf,113,0
+179,When would you use extended?,0,-3.50900936126709,Introduction_To_Computer_Science_-_WEB.pdf,187,1
+179,When would you use extended?,1,-7.4955878257751465,Introduction_To_Computer_Science_-_WEB.pdf,407,1
+179,When would you use extended?,2,-8.801960945129395,Software Engineering at Google.pdf,180,0
+179,When would you use extended?,3,-8.801960945129395,Software Engineering at Google-1.pdf,180,0
+179,When would you use extended?,4,-10.919334411621094,Software Engineering at Google.pdf,172,0
+179,When would you use extended?,5,-10.919334411621094,Software Engineering at Google-1.pdf,172,0
+180,What is the relationship between structure and the rest of the topic?,0,-6.396189212799072,Competitive Programmer_s Handbook.pdf,155,0
+180,What is the relationship between structure and the rest of the topic?,1,-7.29088020324707,Introduction_To_Computer_Science_-_WEB.pdf,105,0
+180,What is the relationship between structure and the rest of the topic?,2,-8.213658332824707,Introduction_To_Computer_Science_-_WEB.pdf,105,0
+180,What is the relationship between structure and the rest of the topic?,3,-9.316539764404297,Introduction_To_Computer_Science_-_WEB.pdf,102,0
+180,What is the relationship between structure and the rest of the topic?,4,-9.457127571105957,Introduction_To_Computer_Science_-_WEB.pdf,463,0
+180,What is the relationship between structure and the rest of the topic?,5,-9.907557487487793,Introduction_To_Computer_Science_-_WEB.pdf,101,0
+181,What is method?,0,1.5996708869934082,Introduction_To_Computer_Science_-_WEB.pdf,499,0
+181,What is method?,1,-0.36977046728134155,Cracking the coding interview 6th edition.pdf,450,1
+181,What is method?,2,-0.36977046728134155,Cracking the coding interview 6th edition-1.pdf,450,0
+181,What is method?,3,-0.3706040680408478,Introduction_To_Computer_Science_-_WEB.pdf,363,0
+181,What is method?,4,-0.8627967834472656,The Self-Taught Programmer.pdf,163,0
+181,What is method?,5,-2.7551894187927246,Cracking the coding interview 6th edition.pdf,666,1
+182,Define sorted.,0,7.692065238952637,Introduction_To_Computer_Science_-_WEB.pdf,130,0
+182,Define sorted.,1,3.225290298461914,Introduction_To_Computer_Science_-_WEB.pdf,146,0
+182,Define sorted.,2,2.6371712684631348,Introduction_To_Computer_Science_-_WEB.pdf,130,0
+182,Define sorted.,3,2.3897016048431396,Competitive Programmer_s Handbook.pdf,40,0
+182,Define sorted.,4,1.0653035640716553,Introduction_To_Computer_Science_-_WEB.pdf,131,0
+182,Define sorted.,5,-0.12967301905155182,Introduction_To_Computer_Science_-_WEB.pdf,124,0
+183,Explain access.,0,3.6299290657043457,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,878,0
+183,Explain access.,1,2.390990734100342,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,880,0
+183,Explain access.,2,-0.7730309367179871,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1053,0
+183,Explain access.,3,-1.430305004119873,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,1053,0
+183,Explain access.,4,-2.203136920928955,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,105,1
+183,Explain access.,5,-2.67452335357666,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,105,1
+184,How does security work?,0,0.8727138042449951,Introduction_To_Computer_Science_-_WEB.pdf,852,0
+184,How does security work?,1,-0.5632426738739014,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,167,1
+184,How does security work?,2,-1.2562575340270996,Introduction_To_Computer_Science_-_WEB.pdf,295,0
+184,How does security work?,3,-2.303797483444214,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,167,1
+184,How does security work?,4,-2.3256783485412598,Introduction_To_Computer_Science_-_WEB.pdf,855,0
+184,How does security work?,5,-2.470874547958374,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,167,1
+185,Why is based important?,0,-0.7469784617424011,College_Success_-_WEB_zQGCJTr.pdf,155,0
+185,Why is based important?,1,-3.732051134109497,College_Success_-_WEB_zQGCJTr.pdf,50,0
+185,Why is based important?,2,-5.60459566116333,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,455,1
+185,Why is based important?,3,-6.617982864379883,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,488,1
+185,Why is based important?,4,-7.820862770080566,Software Engineering at Google.pdf,140,0
+185,Why is based important?,5,-7.820862770080566,Software Engineering at Google-1.pdf,140,0
+186,What problem does added solve?,0,5.583986282348633,Cracking the coding interview 6th edition.pdf,542,0
+186,What problem does added solve?,1,5.583986282348633,Cracking the coding interview 6th edition-1.pdf,542,0
+186,What problem does added solve?,2,-3.3224339485168457,Introduction_To_Computer_Science_-_WEB.pdf,60,0
+186,What problem does added solve?,3,-3.526603937149048,The Self-Taught Programmer.pdf,183,0
+186,What problem does added solve?,4,-6.856374740600586,Cracking the coding interview 6th edition.pdf,542,0
+186,What problem does added solve?,5,-6.856374740600586,Cracking the coding interview 6th edition-1.pdf,542,0
+187,When would you use semver?,0,3.0156688690185547,Software Engineering at Google-1.pdf,477,0
+187,When would you use semver?,1,3.0156688690185547,Software Engineering at Google.pdf,477,1
+187,When would you use semver?,2,0.777094841003418,Software Engineering at Google.pdf,468,1
+187,When would you use semver?,3,0.777094841003418,Software Engineering at Google-1.pdf,468,0
+187,When would you use semver?,4,0.3305070698261261,Software Engineering at Google.pdf,477,1
+187,When would you use semver?,5,0.3305070698261261,Software Engineering at Google-1.pdf,477,0
+188,What is the relationship between dependencies and the rest of the topic?,0,-1.178889274597168,Software Engineering at Google.pdf,484,1
+188,What is the relationship between dependencies and the rest of the topic?,1,-1.178889274597168,Software Engineering at Google-1.pdf,484,0
+188,What is the relationship between dependencies and the rest of the topic?,2,-3.8054356575012207,Software Engineering at Google.pdf,420,1
+188,What is the relationship between dependencies and the rest of the topic?,3,-3.8054356575012207,Software Engineering at Google-1.pdf,420,0
+188,What is the relationship between dependencies and the rest of the topic?,4,-5.348283767700195,Software Engineering at Google-1.pdf,459,0
+188,What is the relationship between dependencies and the rest of the topic?,5,-5.348283767700195,Software Engineering at Google.pdf,459,1
+189,What is choice?,0,-1.2864173650741577,College_Success_-_WEB_zQGCJTr.pdf,326,0
+189,What is choice?,1,-1.3509289026260376,College_Success_-_WEB_zQGCJTr.pdf,114,0
+189,What is choice?,2,-2.3721237182617188,College_Success_-_WEB_zQGCJTr.pdf,116,0
+189,What is choice?,3,-3.4751107692718506,College_Success_-_WEB_zQGCJTr.pdf,114,0
+189,What is choice?,4,-4.3299736976623535,College_Success_-_WEB_zQGCJTr.pdf,51,0
+189,What is choice?,5,-5.131046295166016,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,366,1
+190,Define balance.,0,-0.39102351665496826,Cracking the coding interview 6th edition.pdf,650,0
+190,Define balance.,1,-0.39102351665496826,Cracking the coding interview 6th edition-1.pdf,650,0
+190,Define balance.,2,-0.4480639100074768,Cracking the coding interview 6th edition-1.pdf,650,0
+190,Define balance.,3,-0.4480639100074768,Cracking the coding interview 6th edition.pdf,650,0
+190,Define balance.,4,-2.6104912757873535,Cracking the coding interview 6th edition.pdf,113,0
+190,Define balance.,5,-2.6104912757873535,Cracking the coding interview 6th edition-1.pdf,113,0
+191,Explain array.,0,2.4452857971191406,Introduction_To_Computer_Science_-_WEB.pdf,329,0
+191,Explain array.,1,2.0310723781585693,Introduction_To_Computer_Science_-_WEB.pdf,329,0
+191,Explain array.,2,1.5058648586273193,Cracking the coding interview 6th edition-1.pdf,444,0
+191,Explain array.,3,1.5058648586273193,Cracking the coding interview 6th edition.pdf,444,0
+191,Explain array.,4,1.1088305711746216,Introduction_To_Computer_Science_-_WEB.pdf,171,0
+191,Explain array.,5,-0.6491075158119202,Introduction_To_Computer_Science_-_WEB.pdf,329,0
+192,How does left work?,0,-5.662772178649902,The Self-Taught Programmer.pdf,43,0
+192,How does left work?,1,-5.752071380615234,Cracking the coding interview 6th edition.pdf,536,0
+192,How does left work?,2,-5.752071380615234,Cracking the coding interview 6th edition-1.pdf,536,1
+192,How does left work?,3,-5.872631549835205,Cracking the coding interview 6th edition-1.pdf,283,1
+192,How does left work?,4,-5.872631549835205,Cracking the coding interview 6th edition.pdf,283,0
+192,How does left work?,5,-5.974520683288574,Cracking the coding interview 6th edition.pdf,125,0
+193,Why is chopstick important?,0,-4.624534606933594,Cracking the coding interview 6th edition-1.pdf,461,1
+193,Why is chopstick important?,1,-4.624534606933594,Cracking the coding interview 6th edition.pdf,461,0
+193,Why is chopstick important?,2,-4.797213077545166,Cracking the coding interview 6th edition-1.pdf,463,1
+193,Why is chopstick important?,3,-4.797213077545166,Cracking the coding interview 6th edition.pdf,463,0
+193,Why is chopstick important?,4,-5.9757609367370605,Cracking the coding interview 6th edition.pdf,464,0
+193,Why is chopstick important?,5,-5.9757609367370605,Cracking the coding interview 6th edition-1.pdf,464,1
+194,What problem does philosophers solve?,0,-1.5910322666168213,College_Success_-_WEB_zQGCJTr.pdf,69,0
+194,What problem does philosophers solve?,1,-1.5938942432403564,Cracking the coding interview 6th edition.pdf,463,0
+194,What problem does philosophers solve?,2,-1.5938942432403564,Cracking the coding interview 6th edition-1.pdf,463,1
+194,What problem does philosophers solve?,3,-2.6969780921936035,Introduction_To_Computer_Science_-_WEB.pdf,110,0
+194,What problem does philosophers solve?,4,-3.988999843597412,College_Success_-_WEB_zQGCJTr.pdf,227,0
+194,What problem does philosophers solve?,5,-3.989697217941284,Introduction_To_Computer_Science_-_WEB.pdf,55,0
+195,When would you use continue?,0,-4.224254131317139,The Self-Taught Programmer.pdf,127,0
+195,When would you use continue?,1,-7.033942222595215,Cracking the coding interview 6th edition.pdf,445,0
+195,When would you use continue?,2,-7.033942222595215,Cracking the coding interview 6th edition-1.pdf,445,0
+195,When would you use continue?,3,-9.868085861206055,Cracking the coding interview 6th edition.pdf,445,0
+195,When would you use continue?,4,-9.868085861206055,Cracking the coding interview 6th edition-1.pdf,445,0
+195,When would you use continue?,5,-10.60775089263916,The Self-Taught Programmer.pdf,260,0
+196,What is the relationship between list and the rest of the topic?,0,-5.779926776885986,Introduction_To_Computer_Science_-_WEB.pdf,103,0
+196,What is the relationship between list and the rest of the topic?,1,-6.188844203948975,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,246,1
+196,What is the relationship between list and the rest of the topic?,2,-7.018345832824707,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,297,1
+196,What is the relationship between list and the rest of the topic?,3,-7.622691631317139,Introduction_To_Computer_Science_-_WEB.pdf,103,0
+196,What is the relationship between list and the rest of the topic?,4,-8.811310768127441,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,246,1
+196,What is the relationship between list and the rest of the topic?,5,-9.328420639038086,Introduction_To_Computer_Science_-_WEB.pdf,119,0
+197,What is number?,0,-0.44502025842666626,Introduction_To_Computer_Science_-_WEB.pdf,218,0
+197,What is number?,1,-2.1490707397460938,Introduction_To_Computer_Science_-_WEB.pdf,221,0
+197,What is number?,2,-2.206547975540161,The Self-Taught Programmer.pdf,59,0
+197,What is number?,3,-3.801618814468384,Competitive Programmer_s Handbook.pdf,105,0
+197,What is number?,4,-3.868933916091919,The Self-Taught Programmer.pdf,35,0
+197,What is number?,5,-4.024653911590576,Introduction_To_Computer_Science_-_WEB.pdf,338,0
+198,Define copy.,0,-2.3036856651306152,Cracking the coding interview 6th edition.pdf,437,0
+198,Define copy.,1,-2.3036856651306152,Cracking the coding interview 6th edition-1.pdf,437,0
+198,Define copy.,2,-3.1952407360076904,Cracking the coding interview 6th edition-1.pdf,437,0
+198,Define copy.,3,-3.1952407360076904,Cracking the coding interview 6th edition.pdf,437,0
+198,Define copy.,4,-3.9588515758514404,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,219,1
+198,Define copy.,5,-4.808912754058838,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,124,1
+199,How does create work?,0,-0.965450644493103,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf,271,1
+199,How does create work?,1,-1.0390219688415527,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,147,0
+199,How does create work?,2,-1.373504877090454,Introduction_To_Computer_Science_-_WEB.pdf,173,0
+199,How does create work?,3,-2.7218990325927734,College_Success_-_WEB_zQGCJTr.pdf,216,0
+199,How does create work?,4,-3.4579010009765625,Introduction_To_Computer_Science_-_WEB.pdf,468,0
+199,How does create work?,5,-5.02455997467041,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf,467,0

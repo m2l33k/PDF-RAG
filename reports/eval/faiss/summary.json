@@ -1,0 +1,15 @@
+{
+  "store_dir": "vector_store",
+  "store_config": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "normalize": true
+  },
+  "retriever": "faiss",
+  "top_k": 6,
+  "threshold": 0.47276344895362854,
+  "mean_mrr": 0.3725,
+  "mean_precision@k": 0.26833333333333337,
+  "mean_recall@k": 0.615,
+  "roc_auc": 0.6407507887774303,
+  "average_precision": 0.3914713628078987
+}

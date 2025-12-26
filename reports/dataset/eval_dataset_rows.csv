@@ -1,0 +1,201 @@
+question,question_words,question_chars,n_relevant_sources,relevant_sources_joined
+What is developer?,2,18,1,Introduction_To_Computer_Science_-_WEB.pdf
+Define cloud.,2,13,1,Introduction_To_Computer_Science_-_WEB.pdf
+Explain iaas.,2,13,1,Introduction_To_Computer_Science_-_WEB.pdf
+How does offering work?,4,23,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is actual important?,3,24,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+What problem does products solve?,5,33,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+When would you use insert?,5,26,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between numbers and the rest of the topic?,10,67,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is detail?,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define join.,2,12,1,Cracking the coding interview 6th edition-1.pdf
+Explain pepsi.,2,14,1,Cracking the coding interview 6th edition-1.pdf
+How does outer work?,4,20,1,Cracking the coding interview 6th edition-1.pdf
+Why is does important?,3,22,1,Cracking the coding interview 6th edition-1.pdf
+What problem does public solve?,5,31,1,Cracking the coding interview 6th edition-1.pdf
+When would you use player?,5,26,1,Cracking the coding interview 6th edition-1.pdf
+What is the relationship between attention and the rest of the topic?,10,69,1,Software Engineering at Google-1.pdf
+What is critique?,2,17,1,Software Engineering at Google-1.pdf
+Define implemented.,2,19,1,Software Engineering at Google-1.pdf
+Explain conceivable.,2,20,1,Cracking the coding interview 6th edition-1.pdf
+How does element work?,4,22,1,Cracking the coding interview 6th edition-1.pdf
+Why is runtime important?,3,25,1,Cracking the coding interview 6th edition-1.pdf
+When would you use access?,5,26,1,Cracking the coding interview 6th edition-1.pdf
+What is the relationship between cell and the rest of the topic?,10,64,1,Cracking the coding interview 6th edition-1.pdf
+What is google?,2,15,1,Software Engineering at Google.pdf
+Define borg.,2,12,1,Software Engineering at Google.pdf
+Explain noticeable.,2,19,1,Software Engineering at Google.pdf
+How does serving work?,4,22,1,Software Engineering at Google-1.pdf
+Why is both important?,3,22,1,Software Engineering at Google-1.pdf
+What problem does machines solve?,5,33,1,Software Engineering at Google-1.pdf
+When would you use function?,5,28,1,The Self-Taught Programmer.pdf
+What is the relationship between time and the rest of the topic?,10,64,1,The Self-Taught Programmer.pdf
+What is person?,2,15,1,The Self-Taught Programmer.pdf
+Define process.,2,15,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Explain risks.,2,14,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+How does project work?,4,22,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is documents important?,3,27,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What problem does other solve?,5,30,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use review?,5,26,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between trust and the rest of the topic?,10,65,1,Software Engineering at Google.pdf
+What is That?,2,13,1,Software Engineering at Google.pdf
+Define This.,2,12,1,Software Engineering at Google.pdf
+Explain nosql.,2,14,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+How does adapts work?,4,21,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is database important?,3,26,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+What problem does calendar solve?,5,33,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use allow?,5,25,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between meetings and the rest of the topic?,10,68,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is This?,2,13,1,Software Engineering at Google-1.pdf
+Define majority.,2,16,1,Software Engineering at Google-1.pdf
+Explain control.,2,16,1,Software Engineering at Google-1.pdf
+How does name work?,4,19,1,SQL.pdf
+Why is inventory important?,3,27,1,SQL.pdf
+What problem does phone solve?,5,30,1,SQL.pdf
+When would you use There?,5,25,1,Software Engineering at Google.pdf
+What is the relationship between test and the rest of the topic?,10,64,1,Software Engineering at Google.pdf
+What is regardless?,2,19,1,Software Engineering at Google.pdf
+Define cyber.,2,13,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Explain political.,2,18,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+How does activism work?,4,23,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is learning important?,3,26,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does intel solve?,5,30,1,Introduction_To_Computer_Science_-_WEB.pdf
+When would you use neural?,5,26,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between abstraction and the rest of the topic?,10,71,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is operating?,2,18,1,Introduction_To_Computer_Science_-_WEB.pdf
+Explain products.,2,17,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+How does connecting work?,4,25,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is services important?,3,26,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+What problem does add-on solve?,5,31,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use docs?,5,24,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between Google Workspace and the rest of the topic?,11,76,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is smallest?,2,17,1,Cracking the coding interview 6th edition-1.pdf
+Define difference.,2,18,1,Cracking the coding interview 6th edition-1.pdf
+Explain hints.,2,14,1,Cracking the coding interview 6th edition-1.pdf
+How does excel work?,4,20,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Why is descriptions important?,3,30,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What problem does accounting solve?,5,35,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use forward?,5,27,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between pond and the rest of the topic?,10,64,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is cyber?,2,14,1,Introduction_To_Computer_Science_-_WEB.pdf
+Define continuous.,2,18,1,Software Engineering at Google.pdf
+Explain frequently.,2,19,1,Software Engineering at Google.pdf
+How does changes work?,4,22,1,Software Engineering at Google.pdf
+Why is being important?,3,23,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What problem does capital solve?,5,32,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use technology?,5,30,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between name and the rest of the topic?,10,64,1,SQL-1.pdf
+What is inventory?,2,18,1,SQL-1.pdf
+Define manage.,2,14,1,SQL-1.pdf
+Explain operators.,2,18,1,SQL Tutorial.pdf
+How does hand work?,4,19,1,SQL Tutorial.pdf
+Why is operator important?,3,26,1,SQL Tutorial.pdf
+What problem does linked solve?,5,31,1,50-Coding-Interview-Questions.pdf
+When would you use list?,5,24,1,50-Coding-Interview-Questions.pdf
+What is the relationship between tree and the rest of the topic?,10,64,1,50-Coding-Interview-Questions.pdf
+What is positioning?,2,20,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define text.,2,12,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Explain option.,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does condition work?,4,24,1,Introduction_To_Computer_Science_-_WEB.pdf
+Why is function important?,3,26,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does code solve?,5,29,1,Introduction_To_Computer_Science_-_WEB.pdf
+When would you use management?,5,30,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between solution and the rest of the topic?,10,68,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is patterns?,2,17,1,Introduction_To_Computer_Science_-_WEB.pdf
+Define characters.,2,18,1,Cracking the coding interview 6th edition.pdf
+Explain value.,2,14,1,Cracking the coding interview 6th edition.pdf
+How does just work?,4,19,1,Cracking the coding interview 6th edition.pdf
+Why is static important?,3,24,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does A linker solve?,5,33,1,Introduction_To_Computer_Science_-_WEB.pdf
+When would you use What?,5,24,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between part and the rest of the topic?,10,64,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+What is The organization should select and implement the option that?,10,69,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Define organization.,2,20,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Explain declining.,2,18,1,Cracking the coding interview 6th edition-1.pdf
+How does deadlines work?,4,24,1,Cracking the coding interview 6th edition-1.pdf
+Why is companies important?,3,27,1,Cracking the coding interview 6th edition-1.pdf
+What problem does group solve?,5,30,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use scenario?,5,28,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between forecast and the rest of the topic?,10,68,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is bill?,2,13,1,The Self-Taught Programmer.pdf
+Define value.,2,13,1,The Self-Taught Programmer.pdf
+Explain dictionary.,2,19,1,The Self-Taught Programmer.pdf
+How does code work?,4,19,1,Software Engineering at Google.pdf
+Why is author important?,3,24,1,Software Engineering at Google.pdf
+What problem does Comprehension of Code A code review typically solve?,9,70,1,Software Engineering at Google.pdf
+When would you use izabelle?,5,28,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between This and the rest of the topic?,10,64,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is excel?,2,14,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define available.,2,17,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Explain word.,2,13,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does tabs work?,4,19,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Why is development important?,3,29,1,Software Engineering at Google.pdf
+What problem does measure solve?,5,32,1,Software Engineering at Google.pdf
+When would you use goal?,5,24,1,Software Engineering at Google.pdf
+What is the relationship between liba and the rest of the topic?,10,64,1,Software Engineering at Google-1.pdf
+What is accurate?,2,17,1,Software Engineering at Google-1.pdf
+Define version.,2,15,1,Software Engineering at Google-1.pdf
+Explain following.,2,18,1,Competitive Programmer_s Handbook.pdf
+How does binary work?,4,21,1,Competitive Programmer_s Handbook.pdf
+Why is range important?,3,23,1,Competitive Programmer_s Handbook.pdf
+What problem does affordable solve?,5,35,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between arstechnica and the rest of the topic?,10,71,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is drive?,2,14,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define Google Docs.,3,19,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Explain create.,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does allows work?,4,21,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Why is memory important?,3,24,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What problem does across solve?,5,31,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use google?,5,26,1,Software Engineering at Google-1.pdf
+What is the relationship between link and the rest of the topic?,10,64,1,Software Engineering at Google-1.pdf
+What is content?,2,16,1,Software Engineering at Google-1.pdf
+Define land.,2,12,1,Cracking the coding interview 6th edition-1.pdf
+Explain right.,2,14,1,Cracking the coding interview 6th edition-1.pdf
+How does pointers work?,4,23,1,Cracking the coding interview 6th edition-1.pdf
+Why is cyber important?,3,23,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does against solve?,5,32,1,Introduction_To_Computer_Science_-_WEB.pdf
+When would you use metaverse?,5,29,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between capable and the rest of the topic?,10,67,1,Software Engineering at Google-1.pdf
+What is know?,2,13,1,Software Engineering at Google-1.pdf
+Define efficiency.,2,18,1,Software Engineering at Google-1.pdf
+Explain metadata.,2,17,1,Introduction_To_Computer_Science_-_WEB.pdf
+How does aspects work?,4,22,1,Introduction_To_Computer_Science_-_WEB.pdf
+Why is cataloging important?,3,28,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does design solve?,5,31,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+When would you use Layout View Layout View?,8,43,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between view and the rest of the topic?,10,64,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is optimize?,2,17,1,Software Engineering at Google.pdf
+Define read.,2,12,1,Software Engineering at Google.pdf
+Explain cost.,2,13,1,Software Engineering at Google.pdf
+How does item work?,4,19,1,The Self-Taught Programmer.pdf
+Why is http important?,3,22,1,The Self-Taught Programmer.pdf
+What problem does stack solve?,5,30,1,The Self-Taught Programmer.pdf
+When would you use column?,5,26,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between spreadsheet and the rest of the topic?,10,71,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is values?,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define databases.,2,17,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Explain warehouse.,2,18,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does shopping work?,4,23,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Why is technology important?,3,28,1,Introduction_To_Computer_Science_-_WEB.pdf
+What problem does management solve?,5,35,1,Introduction_To_Computer_Science_-_WEB.pdf
+When would you use extended?,5,28,1,Introduction_To_Computer_Science_-_WEB.pdf
+What is the relationship between structure and the rest of the topic?,10,69,1,Cracking the coding interview 6th edition.pdf
+What is method?,2,15,1,Cracking the coding interview 6th edition.pdf
+Define sorted.,2,14,1,Cracking the coding interview 6th edition.pdf
+Explain access.,2,15,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+How does security work?,4,23,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+Why is based important?,3,23,1,Foundations_of_Information_Systems_-_WEB_oNlbGYl.pdf
+What problem does added solve?,5,30,1,Software Engineering at Google.pdf
+When would you use semver?,5,26,1,Software Engineering at Google.pdf
+What is the relationship between dependencies and the rest of the topic?,10,72,1,Software Engineering at Google.pdf
+What is choice?,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define balance.,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Explain array.,2,14,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does left work?,4,19,1,Cracking the coding interview 6th edition-1.pdf
+Why is chopstick important?,3,27,1,Cracking the coding interview 6th edition-1.pdf
+What problem does philosophers solve?,5,37,1,Cracking the coding interview 6th edition-1.pdf
+When would you use continue?,5,28,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is the relationship between list and the rest of the topic?,10,64,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+What is number?,2,15,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+Define copy.,2,12,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf
+How does create work?,4,21,1,Workplace_Software_and_Skills_-_WEB_IlfJtcP.pdf

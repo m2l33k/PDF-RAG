@@ -1,0 +1,26 @@
+{
+  "store_dir": "vector_store",
+  "store_config": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "normalize": true
+  },
+  "retriever": "faiss",
+  "top_k": 6,
+  "threshold": 0.4720594882965088,
+  "threshold_strategy": "f1",
+  "beta": 0.5,
+  "min_recall": 0.0,
+  "min_precision": 0.0,
+  "tp": 213.0,
+  "fp": 369.0,
+  "tn": 509.0,
+  "fn": 109.0,
+  "hit_precision": 0.36597938144329895,
+  "hit_recall": 0.6614906832298136,
+  "hit_f1": 0.47123893805309736,
+  "mean_mrr": 0.3725,
+  "mean_precision@k": 0.26833333333333337,
+  "mean_recall@k": 0.615,
+  "roc_auc": 0.6407507887774303,
+  "average_precision": 0.3914713628078987
+}

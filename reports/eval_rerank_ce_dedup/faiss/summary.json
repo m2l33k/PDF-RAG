@@ -1,0 +1,29 @@
+{
+  "store_dir": "vector_store",
+  "store_config": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "normalize": true
+  },
+  "retriever": "faiss",
+  "top_k": 6,
+  "threshold": -1.940026044845581,
+  "threshold_strategy": "precision_at_recall",
+  "beta": 0.5,
+  "min_recall": 0.4,
+  "min_precision": 0.0,
+  "reranker": "cross_encoder",
+  "candidate_k": 10,
+  "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "tp": 61.0,
+  "fp": 170.0,
+  "tn": 462.0,
+  "fn": 74.0,
+  "hit_precision": 0.26406926406926406,
+  "hit_recall": 0.45185185185185184,
+  "hit_f1": 0.33333333333333337,
+  "mean_mrr": 0.41700000000000004,
+  "mean_precision@k": 0.212,
+  "mean_recall@k": 0.675,
+  "roc_auc": 0.6178621659634318,
+  "average_precision": 0.2508573887843919
+}

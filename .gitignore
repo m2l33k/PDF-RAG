@@ -13,9 +13,7 @@ __pycache__/
 
 data non traite/
 
-vector_store*/
-reports*/
-eval/questions.csv
+
 
 *.log
 *.tmp

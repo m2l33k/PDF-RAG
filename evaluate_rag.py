@@ -6,9 +6,10 @@ import os
 import random
 import re
 import time
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import faiss
 import matplotlib
@@ -18,7 +19,8 @@ import numpy as np
 import pandas as pd
 import requests
 import torch
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import CrossEncoder, SentenceTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
     PrecisionRecallDisplay,
@@ -39,6 +41,14 @@ class EvalConfig:
     out_dir: Path
     top_k: int
     threshold: float | None
+    retriever: str
+    threshold_strategy: str
+    beta: float
+    min_recall: float
+    min_precision: float
+    reranker: str
+    candidate_k: int
+    cross_encoder_model: str
 
 
 def load_store(store_dir: Path) -> tuple[faiss.Index, list[dict[str, Any]], dict[str, Any]]:
@@ -52,6 +62,65 @@ def get_embed_model(model_name: str) -> SentenceTransformer:
     device = "cuda" if torch.cuda.is_available() else "cpu"
     return SentenceTransformer(model_name, device=device)
 
+
+def get_cross_encoder(model_name: str) -> CrossEncoder:
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    return CrossEncoder(model_name, device=device)
+
+
+def rerank_cross_encoder(question: str, hits: list[dict[str, Any]], model: CrossEncoder) -> list[dict[str, Any]]:
+    if not hits:
+        return []
+    pairs: list[list[str]] = []
+    for h in hits:
+        source = str(h.get("source", "")).strip()
+        chunk = str(h.get("chunk", "")).strip()
+        doc = f"{source}\n{chunk}".strip() if source else chunk
+        pairs.append([str(question), doc])
+    scores = model.predict(pairs)
+    scores = np.asarray(scores, dtype=float).reshape(-1)
+    order = np.argsort(-scores)
+    out: list[dict[str, Any]] = []
+    for rank, j in enumerate(order.tolist()):
+        row = dict(hits[int(j)])
+        row["base_score"] = float(row.get("score", 0.0))
+        row["rerank_score"] = float(scores[int(j)])
+        row["score"] = float(scores[int(j)])
+        row["rank"] = int(rank)
+        out.append(row)
+    return out
+
+
+def apply_reranker(
+    question: str,
+    hits: list[dict[str, Any]],
+    *,
+    reranker: str,
+    cross_encoder: CrossEncoder | None,
+) -> list[dict[str, Any]]:
+    r = str(reranker).strip().lower()
+    if r in {"", "none"}:
+        return hits
+    if r in {"cross_encoder", "cross-encoder"}:
+        if cross_encoder is None:
+            raise ValueError("Missing cross-encoder model")
+        return rerank_cross_encoder(question, hits, cross_encoder)
+    raise ValueError("Unknown reranker")
+
+
+def dedupe_hits_by_source(hits: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for h in hits:
+        src = str(h.get("source", "")).strip()
+        if not src:
+            out.append(h)
+            continue
+        if src in seen:
+            continue
+        seen.add(src)
+        out.append(h)
+    return out
 
 def retrieve(
     question: str,
@@ -77,6 +146,53 @@ def retrieve(
     return out
 
 
+def build_tfidf_retriever(meta: list[dict[str, Any]]) -> Callable[[str, int], list[dict[str, Any]]]:
+    texts: list[str] = []
+    meta_ids: list[int] = []
+    for i, m in enumerate(meta):
+        chunk = m.get("chunk")
+        if not isinstance(chunk, str):
+            continue
+        s = chunk.strip()
+        if not s:
+            continue
+        texts.append(s)
+        meta_ids.append(int(i))
+
+    if not texts:
+        raise ValueError("No text chunks found in store metadata for TF-IDF baseline.")
+
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_features=60000)
+    doc_matrix = vectorizer.fit_transform(texts)
+
+    def _retrieve(question: str, top_k: int) -> list[dict[str, Any]]:
+        q = str(question).strip()
+        if not q:
+            return []
+        q_vec = vectorizer.transform([q])
+        scores = (doc_matrix @ q_vec.T).toarray().ravel()
+        if scores.size == 0:
+            return []
+        k = min(int(top_k), int(scores.size))
+        if k <= 0:
+            return []
+        if k == scores.size:
+            top_local = np.argsort(-scores)
+        else:
+            top_local = np.argpartition(-scores, k - 1)[:k]
+            top_local = top_local[np.argsort(-scores[top_local])]
+        out: list[dict[str, Any]] = []
+        for rank, li in enumerate(top_local.tolist()):
+            mi = meta_ids[int(li)]
+            row = dict(meta[mi])
+            row["score"] = float(scores[int(li)])
+            row["rank"] = int(rank)
+            out.append(row)
+        return out
+
+    return _retrieve
+
+
 def parse_sources(value: Any) -> set[str]:
     if value is None:
         return set()
@@ -90,7 +206,10 @@ def precision_at_k(relevance: list[int], k: int) -> float:
     if k <= 0:
         return 0.0
     rel_k = relevance[:k]
-    return float(sum(rel_k)) / float(k)
+    denom = min(int(k), int(len(relevance)))
+    if denom <= 0:
+        return 0.0
+    return float(sum(rel_k)) / float(denom)
 
 
 def recall_at_k(relevance: list[int]) -> float:
@@ -192,6 +311,200 @@ def extract_keyphrases(text: str, max_phrases: int) -> list[str]:
                     break
 
     return phrases[:max_phrases]
+
+
+def _quantiles(values: list[float], qs: list[float]) -> dict[str, float]:
+    if not values:
+        return {str(q): float("nan") for q in qs}
+    arr = np.asarray(values, dtype=float)
+    out: dict[str, float] = {}
+    for q in qs:
+        out[str(q)] = float(np.quantile(arr, float(q)))
+    return out
+
+
+def _save_bar_counts(counts: pd.Series, out_path: Path, *, title: str, xlabel: str, ylabel: str) -> None:
+    fig, ax = plt.subplots(figsize=(6, 4))
+    x = counts.index.to_list()
+    y = counts.to_list()
+    ax.bar([str(v) for v in x], y)
+    ax.set_title(title)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=200)
+    plt.close(fig)
+
+
+def _save_hist(values: list[float], out_path: Path, *, title: str, xlabel: str, bins: int = 20) -> None:
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.hist(values, bins=int(bins))
+    ax.set_title(title)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel("Count")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=200)
+    plt.close(fig)
+
+
+def _save_barh_top(counter: Counter[str], out_path: Path, *, title: str, top_n: int = 20) -> None:
+    items = counter.most_common(int(top_n))
+    labels = [k for k, _ in items][::-1]
+    values = [v for _, v in items][::-1]
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.barh(labels, values)
+    ax.set_title(title)
+    ax.set_xlabel("Count")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=200)
+    plt.close(fig)
+
+
+def build_dataset_report(store_dir: Path, eval_csv: Path, out_dir: Path) -> dict[str, Any]:
+    ensure_out_dir(out_dir)
+    _, meta, store_cfg = load_store(store_dir)
+
+    if not eval_csv.exists():
+        raise FileNotFoundError(f"Missing eval CSV: {eval_csv}")
+    df = pd.read_csv(eval_csv)
+    if "question" not in df.columns or "relevant_sources" not in df.columns:
+        raise ValueError("CSV must include columns: question, relevant_sources")
+
+    rows: list[dict[str, Any]] = []
+    rel_counter: Counter[str] = Counter()
+    for q_raw, rel_raw in zip(df["question"].tolist(), df["relevant_sources"].tolist()):
+        q = str(q_raw).strip()
+        if not q:
+            continue
+        rel_set = parse_sources(rel_raw)
+        rel_counter.update(rel_set)
+        rows.append(
+            {
+                "question": q,
+                "question_words": int(len(tokenize_words(q))),
+                "question_chars": int(len(q)),
+                "n_relevant_sources": int(len(rel_set)),
+                "relevant_sources_joined": ";".join(sorted(rel_set)),
+            }
+        )
+
+    questions = [str(r["question"]) for r in rows]
+    question_word_lens = [int(r["question_words"]) for r in rows]
+    question_char_lens = [int(r["question_chars"]) for r in rows]
+    rel_counts = [int(r["n_relevant_sources"]) for r in rows]
+
+    store_sources = [str(m.get("source", "")).strip() for m in meta]
+    store_sources = [s for s in store_sources if s]
+    store_source_counter = Counter(store_sources)
+    store_unique_sources = sorted(set(store_sources))
+
+    chunk_char_lens: list[int] = []
+    pages: list[int] = []
+    for m in meta:
+        chunk = m.get("chunk")
+        if isinstance(chunk, str):
+            chunk_char_lens.append(len(chunk))
+        p = m.get("page")
+        if isinstance(p, int):
+            pages.append(p)
+        elif isinstance(p, float) and not np.isnan(p):
+            pages.append(int(p))
+
+    missing_rel_sources = sorted([s for s in rel_counter.keys() if s not in set(store_unique_sources)])
+
+    rel_count_series = pd.Series(rel_counts, name="n_relevant_sources")
+    rel_count_counts = rel_count_series.value_counts().sort_index()
+    _save_bar_counts(
+        rel_count_counts,
+        out_dir / "relevant_sources_per_question.png",
+        title="Relevant sources per question",
+        xlabel="# relevant sources",
+        ylabel="# questions",
+    )
+    if question_word_lens:
+        _save_hist(
+            [float(v) for v in question_word_lens],
+            out_dir / "question_length_words.png",
+            title="Question length distribution",
+            xlabel="Words per question",
+            bins=20,
+        )
+    if chunk_char_lens:
+        _save_hist(
+            [float(v) for v in chunk_char_lens],
+            out_dir / "chunk_length_chars.png",
+            title="Chunk length distribution",
+            xlabel="Characters per chunk",
+            bins=30,
+        )
+    if rel_counter:
+        _save_barh_top(rel_counter, out_dir / "top_relevant_sources.png", title="Top relevant sources (ground truth)", top_n=20)
+    if store_source_counter:
+        _save_barh_top(store_source_counter, out_dir / "top_sources_by_chunks.png", title="Top sources by #chunks in store", top_n=20)
+
+    summary: dict[str, Any] = {
+        "eval_csv": str(eval_csv),
+        "store_dir": str(store_dir),
+        "store_config": store_cfg,
+        "n_questions": int(len(questions)),
+        "relevant_sources_total_refs": int(sum(rel_counts)),
+        "relevant_sources_unique": int(len(rel_counter)),
+        "relevant_sources_missing_in_store": int(len(missing_rel_sources)),
+        "relevant_sources_missing_in_store_list": missing_rel_sources[:50],
+        "relevant_sources_per_question": {
+            "mean": float(np.mean(rel_counts)) if rel_counts else float("nan"),
+            "median": float(np.median(rel_counts)) if rel_counts else float("nan"),
+            **_quantiles([float(v) for v in rel_counts], [0.9, 0.95, 0.99]),
+        },
+        "question_length_words": {
+            "mean": float(np.mean(question_word_lens)) if question_word_lens else float("nan"),
+            "median": float(np.median(question_word_lens)) if question_word_lens else float("nan"),
+            **_quantiles([float(v) for v in question_word_lens], [0.9, 0.95, 0.99]),
+        },
+        "question_length_chars": {
+            "mean": float(np.mean(question_char_lens)) if question_char_lens else float("nan"),
+            "median": float(np.median(question_char_lens)) if question_char_lens else float("nan"),
+            **_quantiles([float(v) for v in question_char_lens], [0.9, 0.95, 0.99]),
+        },
+        "store": {
+            "n_chunks": int(len(meta)),
+            "n_unique_sources": int(len(store_unique_sources)),
+            "chunk_length_chars": {
+                "mean": float(np.mean(chunk_char_lens)) if chunk_char_lens else float("nan"),
+                "median": float(np.median(chunk_char_lens)) if chunk_char_lens else float("nan"),
+                **_quantiles([float(v) for v in chunk_char_lens], [0.9, 0.95, 0.99]),
+            },
+            "chunks_per_source": {
+                "mean": float(np.mean(list(store_source_counter.values()))) if store_source_counter else float("nan"),
+                "median": float(np.median(list(store_source_counter.values()))) if store_source_counter else float("nan"),
+                **_quantiles([float(v) for v in store_source_counter.values()], [0.9, 0.95, 0.99]),
+            },
+            "page_index": {
+                "min": int(min(pages)) if pages else None,
+                "max": int(max(pages)) if pages else None,
+            },
+        },
+        "top_relevant_sources": [{"source": k, "count": int(v)} for k, v in rel_counter.most_common(20)],
+        "top_store_sources_by_chunks": [{"source": k, "count": int(v)} for k, v in store_source_counter.most_common(20)],
+        "figures": {
+            "relevant_sources_per_question": str(out_dir / "relevant_sources_per_question.png"),
+            "question_length_words": str(out_dir / "question_length_words.png"),
+            "chunk_length_chars": str(out_dir / "chunk_length_chars.png"),
+            "top_relevant_sources": str(out_dir / "top_relevant_sources.png"),
+            "top_sources_by_chunks": str(out_dir / "top_sources_by_chunks.png"),
+        },
+    }
+
+    (out_dir / "dataset_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    pd.DataFrame(rows).to_csv(out_dir / "eval_dataset_rows.csv", index=False)
+    pd.DataFrame({"n_relevant_sources": rel_counts}).to_csv(out_dir / "relevant_sources_per_question.csv", index=False)
+    pd.DataFrame(
+        [{"source": k, "count": int(v)} for k, v in rel_counter.most_common()],
+    ).to_csv(out_dir / "relevant_source_frequency.csv", index=False)
+    pd.DataFrame(
+        [{"source": k, "count": int(v)} for k, v in store_source_counter.most_common()],
+    ).to_csv(out_dir / "chunks_per_source.csv", index=False)
+    return summary
 
 
 def extract_keywords(text: str, max_keywords: int) -> list[str]:
@@ -579,19 +892,73 @@ def store_label(store_dir: Path, store_cfg: dict[str, Any]) -> str:
     return safe_name("_".join(parts))
 
 
-def find_best_threshold(y_true: np.ndarray, y_score: np.ndarray) -> float:
-    thresholds = np.unique(y_score)
-    if thresholds.size == 0:
+def choose_threshold(
+    y_true: np.ndarray,
+    y_score: np.ndarray,
+    *,
+    strategy: str,
+    beta: float,
+    min_recall: float,
+    min_precision: float,
+) -> float:
+    if y_true.size == 0 or y_score.size == 0:
         return 0.0
-    best_t = float(thresholds[0])
-    best_f1 = -1.0
-    for t in thresholds:
-        y_pred = (y_score >= t).astype(int)
-        f1 = f1_score(y_true, y_pred, zero_division=0)
-        if f1 > best_f1:
-            best_f1 = float(f1)
-            best_t = float(t)
-    return best_t
+    if len(np.unique(y_true)) < 2:
+        return float(np.max(y_score))
+
+    strategy = str(strategy).strip().lower()
+    beta = float(beta)
+    beta2 = beta * beta
+    min_recall = float(min_recall)
+    min_precision = float(min_precision)
+
+    prec, rec, thr = precision_recall_curve(y_true, y_score)
+    if thr.size == 0:
+        return float(np.max(y_score))
+
+    p = prec[:-1]
+    r = rec[:-1]
+    t = thr
+
+    if strategy == "f1":
+        scores = (2.0 * p * r) / np.maximum(1e-12, (p + r))
+        mask = np.ones_like(scores, dtype=bool)
+    elif strategy == "fbeta":
+        scores = ((1.0 + beta2) * p * r) / np.maximum(1e-12, (beta2 * p + r))
+        mask = np.ones_like(scores, dtype=bool)
+    elif strategy == "precision_at_recall":
+        scores = p
+        mask = r >= min_recall
+    elif strategy == "recall_at_precision":
+        scores = r
+        mask = p >= min_precision
+    else:
+        scores = (2.0 * p * r) / np.maximum(1e-12, (p + r))
+        mask = np.ones_like(scores, dtype=bool)
+
+    if not bool(np.any(mask)):
+        scores = (2.0 * p * r) / np.maximum(1e-12, (p + r))
+        mask = np.ones_like(scores, dtype=bool)
+
+    idxs = np.where(mask)[0]
+    best_local = idxs[int(np.argmax(scores[idxs]))]
+    return float(t[int(best_local)])
+
+
+def classification_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+    precision = float(tp) / float(tp + fp) if (tp + fp) > 0 else 0.0
+    recall = float(tp) / float(tp + fn) if (tp + fn) > 0 else 0.0
+    f1 = (2.0 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+    return {
+        "tp": float(tp),
+        "fp": float(fp),
+        "tn": float(tn),
+        "fn": float(fn),
+        "hit_precision": float(precision),
+        "hit_recall": float(recall),
+        "hit_f1": float(f1),
+    }
 
 
 def plot_confusion(y_true: np.ndarray, y_pred: np.ndarray, out_path: Path, title: str) -> None:
@@ -608,16 +975,25 @@ def plot_confusion(y_true: np.ndarray, y_pred: np.ndarray, out_path: Path, title
 def plot_roc_pr(y_true: np.ndarray, y_score: np.ndarray, out_dir: Path) -> dict[str, float]:
     metrics: dict[str, float] = {}
 
-    fpr, tpr, _ = roc_curve(y_true, y_score)
-    roc_auc = roc_auc_score(y_true, y_score) if len(np.unique(y_true)) > 1 else float("nan")
-    fig, ax = plt.subplots(figsize=(6, 4))
-    RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc).plot(ax=ax)
-    ax.set_title("ROC Curve")
-    fig.tight_layout()
-    fig.savefig(out_dir / "roc_curve.png", dpi=200)
-    plt.close(fig)
-    if roc_auc == roc_auc:
+    if len(np.unique(y_true)) > 1:
+        fpr, tpr, _ = roc_curve(y_true, y_score)
+        roc_auc = roc_auc_score(y_true, y_score)
+        fig, ax = plt.subplots(figsize=(6, 4))
+        RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc).plot(ax=ax)
+        ax.set_title("ROC Curve")
+        fig.tight_layout()
+        fig.savefig(out_dir / "roc_curve.png", dpi=200)
+        plt.close(fig)
         metrics["roc_auc"] = float(roc_auc)
+    else:
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.set_title("ROC Curve")
+        ax.set_xlabel("False Positive Rate")
+        ax.set_ylabel("True Positive Rate")
+        ax.text(0.5, 0.5, "Not enough label variety for ROC", ha="center", va="center")
+        fig.tight_layout()
+        fig.savefig(out_dir / "roc_curve.png", dpi=200)
+        plt.close(fig)
 
     prec, rec, _ = precision_recall_curve(y_true, y_score)
     ap = average_precision_score(y_true, y_score) if len(np.unique(y_true)) > 1 else float("nan")
@@ -663,19 +1039,23 @@ def plot_k_curves(per_query: pd.DataFrame, out_dir: Path, top_k: int) -> None:
     plt.close(fig)
 
 
-def run_eval(cfg: EvalConfig) -> None:
-    ensure_out_dir(cfg.out_dir)
-    idx, meta, store_cfg = load_store(cfg.store_dir)
-    embed_model = get_embed_model(store_cfg["embedding_model"])
-
-    if not cfg.eval_csv.exists():
-        raise FileNotFoundError(
-            f"Missing eval CSV: {cfg.eval_csv}. Create it with columns: question,relevant_sources "
-            f"(example created at {Path('eval') / 'questions.csv'})."
-        )
-    df = pd.read_csv(cfg.eval_csv)
-    if "question" not in df.columns or "relevant_sources" not in df.columns:
-        raise ValueError("CSV must include columns: question, relevant_sources")
+def eval_questions(
+    *,
+    retriever_name: str,
+    df: pd.DataFrame,
+    retrieve_fn: Callable[[str, int], list[dict[str, Any]]],
+    out_dir: Path,
+    top_k: int,
+    threshold: float | None,
+    threshold_strategy: str,
+    beta: float,
+    min_recall: float,
+    min_precision: float,
+    reranker: str,
+    candidate_k: int,
+    cross_encoder_model: str,
+) -> dict[str, Any]:
+    ensure_out_dir(out_dir)
 
     all_y_true: list[int] = []
     all_y_score: list[float] = []
@@ -688,7 +1068,7 @@ def run_eval(cfg: EvalConfig) -> None:
         if not q:
             continue
 
-        hits = retrieve(q, idx, meta, embed_model, top_k=cfg.top_k)
+        hits = retrieve_fn(q, int(top_k))
         relevance = [1 if h.get("source") in rel_sources else 0 for h in hits]
 
         for h, rel in zip(hits, relevance):
@@ -700,6 +1080,8 @@ def run_eval(cfg: EvalConfig) -> None:
                     "question": q,
                     "hit_rank": int(h.get("rank", -1)),
                     "hit_score": float(h.get("score", 0.0)),
+                    "hit_base_score": float(h.get("base_score", float("nan"))),
+                    "hit_rerank_score": float(h.get("rerank_score", float("nan"))),
                     "hit_source": str(h.get("source", "")),
                     "hit_page": int(h.get("page", -1)),
                     "is_relevant": int(rel),
@@ -707,7 +1089,7 @@ def run_eval(cfg: EvalConfig) -> None:
             )
 
         per_query: dict[str, Any] = {"query_id": int(row_id), "question": q}
-        for k in range(1, cfg.top_k + 1):
+        for k in range(1, int(top_k) + 1):
             per_query[f"precision@{k}"] = precision_at_k(relevance, k)
             per_query[f"recall@{k}"] = recall_at_k(relevance[:k])
         per_query["mrr"] = mrr_at_k(relevance)
@@ -718,40 +1100,181 @@ def run_eval(cfg: EvalConfig) -> None:
 
     per_query_df = pd.DataFrame(per_query_rows)
     detailed_df = pd.DataFrame(detailed_rows)
-    per_query_df.to_csv(cfg.out_dir / "per_query_metrics.csv", index=False)
-    detailed_df.to_csv(cfg.out_dir / "detailed_hits.csv", index=False)
+    per_query_df.to_csv(out_dir / "per_query_metrics.csv", index=False)
+    detailed_df.to_csv(out_dir / "detailed_hits.csv", index=False)
 
     y_true = np.asarray(all_y_true, dtype=int)
     y_score = np.asarray(all_y_score, dtype=float)
 
-    chosen_t = cfg.threshold if cfg.threshold is not None else find_best_threshold(y_true, y_score)
+    chosen_t = (
+        float(threshold)
+        if threshold is not None
+        else choose_threshold(
+            y_true,
+            y_score,
+            strategy=str(threshold_strategy),
+            beta=float(beta),
+            min_recall=float(min_recall),
+            min_precision=float(min_precision),
+        )
+    )
     y_pred = (y_score >= chosen_t).astype(int)
+    cls = classification_metrics(y_true, y_pred)
 
-    plot_confusion(y_true, y_pred, cfg.out_dir / "confusion_matrix.png", f"Confusion Matrix (threshold={chosen_t:.4f})")
-    curve_metrics = plot_roc_pr(y_true, y_score, cfg.out_dir)
-    plot_k_curves(per_query_df, cfg.out_dir, cfg.top_k)
+    plot_confusion(y_true, y_pred, out_dir / "confusion_matrix.png", f"{retriever_name} Confusion (t={chosen_t:.4f})")
+    curve_metrics = plot_roc_pr(y_true, y_score, out_dir)
+    plot_k_curves(per_query_df, out_dir, int(top_k))
 
     summary = {
-        "store_dir": str(cfg.store_dir),
-        "store_config": store_cfg,
-        "top_k": cfg.top_k,
+        "retriever": retriever_name,
+        "top_k": int(top_k),
         "threshold": float(chosen_t),
+        "threshold_strategy": str(threshold_strategy),
+        "beta": float(beta),
+        "min_recall": float(min_recall),
+        "min_precision": float(min_precision),
+        "reranker": str(reranker),
+        "candidate_k": int(candidate_k),
+        "cross_encoder_model": str(cross_encoder_model),
+        **cls,
         "mean_mrr": float(per_query_df["mrr"].mean()),
-        "mean_precision@k": float(per_query_df[f"precision@{cfg.top_k}"].mean()),
-        "mean_recall@k": float(per_query_df[f"recall@{cfg.top_k}"].mean()),
+        "mean_precision@k": float(per_query_df[f"precision@{int(top_k)}"].mean()),
+        "mean_recall@k": float(per_query_df[f"recall@{int(top_k)}"].mean()),
         **curve_metrics,
     }
-    (cfg.out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    return summary
+
+
+def run_eval(cfg: EvalConfig) -> list[dict[str, Any]]:
+    ensure_out_dir(cfg.out_dir)
+    idx, meta, store_cfg = load_store(cfg.store_dir)
+
+    if not cfg.eval_csv.exists():
+        raise FileNotFoundError(
+            f"Missing eval CSV: {cfg.eval_csv}. Create it with columns: question,relevant_sources "
+            f"(example created at {Path('eval') / 'questions.csv'})."
+        )
+    df = pd.read_csv(cfg.eval_csv)
+    if "question" not in df.columns or "relevant_sources" not in df.columns:
+        raise ValueError("CSV must include columns: question, relevant_sources")
+
+    mode = str(cfg.retriever).strip().lower()
+    retrievers: list[tuple[str, Callable[[str, int], list[dict[str, Any]]]]] = []
+
+    reranker_name = str(cfg.reranker).strip().lower()
+    cross_encoder: CrossEncoder | None = None
+    if reranker_name in {"cross_encoder", "cross-encoder"}:
+        cross_encoder = get_cross_encoder(str(cfg.cross_encoder_model))
+
+    if mode in {"faiss", "both"}:
+        embed_model = get_embed_model(str(store_cfg["embedding_model"]))
+
+        def _faiss(q: str, top_k: int) -> list[dict[str, Any]]:
+            base_k = int(cfg.candidate_k) if reranker_name not in {"", "none"} else int(top_k)
+            hits = retrieve(q, idx, meta, embed_model, top_k=int(base_k))
+            hits = apply_reranker(q, hits, reranker=reranker_name, cross_encoder=cross_encoder)
+            if reranker_name not in {"", "none"}:
+                hits = dedupe_hits_by_source(hits)
+                for r, h in enumerate(hits):
+                    h["rank"] = int(r)
+            return hits[: int(top_k)]
+
+        retrievers.append(("faiss", _faiss))
+
+    if mode in {"tfidf", "both"}:
+        tfidf_retrieve = build_tfidf_retriever(meta)
+
+        def _tfidf(q: str, top_k: int) -> list[dict[str, Any]]:
+            base_k = int(cfg.candidate_k) if reranker_name not in {"", "none"} else int(top_k)
+            hits = tfidf_retrieve(q, int(base_k))
+            hits = apply_reranker(q, hits, reranker=reranker_name, cross_encoder=cross_encoder)
+            if reranker_name not in {"", "none"}:
+                hits = dedupe_hits_by_source(hits)
+                for r, h in enumerate(hits):
+                    h["rank"] = int(r)
+            return hits[: int(top_k)]
+
+        retrievers.append(("tfidf", _tfidf))
+
+    if not retrievers:
+        raise ValueError("Invalid retriever selection.")
+
+    summaries: list[dict[str, Any]] = []
+    for name, fn in retrievers:
+        one_out = cfg.out_dir / name
+        s = eval_questions(
+            retriever_name=name,
+            df=df,
+            retrieve_fn=fn,
+            out_dir=one_out,
+            top_k=int(cfg.top_k),
+            threshold=cfg.threshold,
+            threshold_strategy=str(cfg.threshold_strategy),
+            beta=float(cfg.beta),
+            min_recall=float(cfg.min_recall),
+            min_precision=float(cfg.min_precision),
+            reranker=str(cfg.reranker),
+            candidate_k=int(cfg.candidate_k),
+            cross_encoder_model=str(cfg.cross_encoder_model),
+        )
+        s = {
+            "store_dir": str(cfg.store_dir),
+            "store_config": store_cfg,
+            **s,
+        }
+        (one_out / "summary.json").write_text(json.dumps(s, indent=2), encoding="utf-8")
+        summaries.append(s)
+
+    if len(summaries) > 1:
+        flat_rows: list[dict[str, Any]] = []
+        for s in summaries:
+            flat_rows.append(
+                {
+                    "retriever": s.get("retriever", ""),
+                    "top_k": s.get("top_k", ""),
+                    "threshold": s.get("threshold", ""),
+                    "mean_mrr": s.get("mean_mrr", ""),
+                    "mean_precision@k": s.get("mean_precision@k", ""),
+                    "mean_recall@k": s.get("mean_recall@k", ""),
+                    "roc_auc": s.get("roc_auc", ""),
+                    "average_precision": s.get("average_precision", ""),
+                }
+            )
+        pd.DataFrame(flat_rows).to_csv(cfg.out_dir / "comparison.csv", index=False)
 
     print("Saved evaluation report to:", str(cfg.out_dir))
-    print(json.dumps(summary, indent=2))
+    for s in summaries:
+        print(
+            f"- {s.get('retriever')}: "
+            f"hit_precision={float(s.get('hit_precision', 0.0)):.4f} "
+            f"hit_recall={float(s.get('hit_recall', 0.0)):.4f} "
+            f"mrr={float(s.get('mean_mrr', 0.0)):.4f} "
+            f"p@k={float(s.get('mean_precision@k', 0.0)):.4f} "
+            f"r@k={float(s.get('mean_recall@k', 0.0)):.4f}"
+        )
+    return summaries
 
 
-def run_sweep(store_dirs: list[Path], eval_csv: Path, out_dir: Path, top_k: int, threshold: float | None) -> None:
+def run_sweep(
+    store_dirs: list[Path],
+    eval_csv: Path,
+    out_dir: Path,
+    top_k: int,
+    threshold: float | None,
+    retriever: str,
+    threshold_strategy: str,
+    beta: float,
+    min_recall: float,
+    min_precision: float,
+    reranker: str,
+    candidate_k: int,
+    cross_encoder_model: str,
+) -> None:
     ensure_out_dir(out_dir)
     rows: list[dict[str, Any]] = []
     for store_dir in store_dirs:
-        idx, meta, store_cfg = load_store(store_dir)
+        _, _, store_cfg = load_store(store_dir)
         label = store_label(store_dir, store_cfg)
         one_out = out_dir / label
         cfg = EvalConfig(
@@ -760,29 +1283,34 @@ def run_sweep(store_dirs: list[Path], eval_csv: Path, out_dir: Path, top_k: int,
             out_dir=one_out,
             top_k=top_k,
             threshold=threshold,
+            retriever=str(retriever),
+            threshold_strategy=str(threshold_strategy),
+            beta=float(beta),
+            min_recall=float(min_recall),
+            min_precision=float(min_precision),
+            reranker=str(reranker),
+            candidate_k=int(candidate_k),
+            cross_encoder_model=str(cross_encoder_model),
         )
-        run_eval(cfg)
-        summary_path = one_out / "summary.json"
-        try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        flat = {
-            "label": label,
-            "store_dir": str(store_dir),
-            "embedding_model": str(store_cfg.get("embedding_model", "")),
-            "normalize": bool(store_cfg.get("normalize", False)),
-            "chunk_size": store_cfg.get("chunk_size", ""),
-            "chunk_overlap": store_cfg.get("chunk_overlap", ""),
-            "top_k": summary.get("top_k", top_k),
-            "threshold": summary.get("threshold", ""),
-            "mean_mrr": summary.get("mean_mrr", ""),
-            "mean_precision@k": summary.get("mean_precision@k", ""),
-            "mean_recall@k": summary.get("mean_recall@k", ""),
-            "roc_auc": summary.get("roc_auc", ""),
-            "average_precision": summary.get("average_precision", ""),
-        }
-        rows.append(flat)
+        summaries = run_eval(cfg)
+        for summary in summaries:
+            flat = {
+                "label": label,
+                "retriever": summary.get("retriever", ""),
+                "store_dir": str(store_dir),
+                "embedding_model": str(store_cfg.get("embedding_model", "")),
+                "normalize": bool(store_cfg.get("normalize", False)),
+                "chunk_size": store_cfg.get("chunk_size", ""),
+                "chunk_overlap": store_cfg.get("chunk_overlap", ""),
+                "top_k": summary.get("top_k", top_k),
+                "threshold": summary.get("threshold", ""),
+                "mean_mrr": summary.get("mean_mrr", ""),
+                "mean_precision@k": summary.get("mean_precision@k", ""),
+                "mean_recall@k": summary.get("mean_recall@k", ""),
+                "roc_auc": summary.get("roc_auc", ""),
+                "average_precision": summary.get("average_precision", ""),
+            }
+            rows.append(flat)
     if rows:
         pd.DataFrame(rows).to_csv(out_dir / "aggregate.csv", index=False)
 
@@ -794,8 +1322,23 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--store-glob", default=None, type=str)
     p.add_argument("--eval-csv", default="eval/questions.csv", type=str)
     p.add_argument("--out-dir", default="reports/eval", type=str)
+    p.add_argument("--dataset-report", action="store_true")
+    p.add_argument("--dataset-out-dir", default="reports/dataset", type=str)
     p.add_argument("--top-k", default=6, type=int)
     p.add_argument("--threshold", default=None, type=float)
+    p.add_argument("--retriever", default="both", choices=["faiss", "tfidf", "both"], type=str)
+    p.add_argument("--reranker", default="none", choices=["none", "cross_encoder"], type=str)
+    p.add_argument("--candidate-k", default=10, type=int)
+    p.add_argument("--cross-encoder-model", default="cross-encoder/ms-marco-MiniLM-L-6-v2", type=str)
+    p.add_argument(
+        "--threshold-strategy",
+        default="f1",
+        choices=["f1", "fbeta", "precision_at_recall", "recall_at_precision"],
+        type=str,
+    )
+    p.add_argument("--beta", default=0.5, type=float)
+    p.add_argument("--min-recall", default=0.0, type=float)
+    p.add_argument("--min-precision", default=0.0, type=float)
     p.add_argument("--make-questions", action="store_true")
     p.add_argument("--questions-out", default="eval/questions.csv", type=str)
     p.add_argument("--n-questions", default=200, type=int)
@@ -813,9 +1356,23 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_arg_parser().parse_args()
+    if (
+        str(args.reranker).strip().lower() in {"cross_encoder", "cross-encoder"}
+        and args.threshold is None
+        and str(args.threshold_strategy).strip().lower() == "f1"
+        and float(args.min_recall) == 0.0
+        and float(args.min_precision) == 0.0
+    ):
+        args.threshold_strategy = "precision_at_recall"
+        args.min_recall = 0.4
     eval_csv = Path(args.eval_csv)
     out_dir = Path(args.out_dir)
     store_dir = Path(args.store_dir)
+    if bool(args.dataset_report):
+        dataset_out_dir = Path(args.dataset_out_dir)
+        build_dataset_report(store_dir=store_dir, eval_csv=eval_csv, out_dir=dataset_out_dir)
+        print("Saved dataset report to:", str(dataset_out_dir))
+        return
     if bool(args.make_questions):
         _, meta, _ = load_store(store_dir)
         if str(args.questions_backend) == "github":
@@ -859,6 +1416,14 @@ def main() -> None:
             out_dir=out_dir,
             top_k=int(args.top_k),
             threshold=args.threshold,
+            retriever=str(args.retriever),
+            threshold_strategy=str(args.threshold_strategy),
+            beta=float(args.beta),
+            min_recall=float(args.min_recall),
+            min_precision=float(args.min_precision),
+            reranker=str(args.reranker),
+            candidate_k=int(args.candidate_k),
+            cross_encoder_model=str(args.cross_encoder_model),
         )
     else:
         cfg = EvalConfig(
@@ -867,6 +1432,14 @@ def main() -> None:
             out_dir=out_dir,
             top_k=int(args.top_k),
             threshold=args.threshold,
+            retriever=str(args.retriever),
+            threshold_strategy=str(args.threshold_strategy),
+            beta=float(args.beta),
+            min_recall=float(args.min_recall),
+            min_precision=float(args.min_precision),
+            reranker=str(args.reranker),
+            candidate_k=int(args.candidate_k),
+            cross_encoder_model=str(args.cross_encoder_model),
         )
         run_eval(cfg)
 

@@ -12,7 +12,7 @@ import numpy as np
 import requests
 import streamlit as st
 import torch
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import CrossEncoder, SentenceTransformer
 
 PROJECT_DIR = Path(__file__).resolve().parent
 STORE_DIR = PROJECT_DIR / "vector_store"
@@ -114,6 +114,12 @@ def get_embed_model(model_name: str) -> SentenceTransformer:
 
 
 @st.cache_resource
+def get_cross_encoder(model_name: str) -> CrossEncoder:
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    return CrossEncoder(model_name, device=device)
+
+
+@st.cache_resource
 def get_store() -> tuple[faiss.Index, list[dict[str, Any]], dict[str, Any]]:
     return load_store(STORE_DIR)
 
@@ -142,6 +148,44 @@ def retrieve(
     return out
 
 
+def rerank_cross_encoder(question: str, hits: list[dict[str, Any]], model: CrossEncoder) -> list[dict[str, Any]]:
+    if not hits:
+        return []
+    pairs: list[list[str]] = []
+    for h in hits:
+        source = str(h.get("source", "")).strip()
+        chunk = str(h.get("chunk", "")).strip()
+        doc = f"{source}\n{chunk}".strip() if source else chunk
+        pairs.append([str(question), doc])
+    scores = model.predict(pairs)
+    scores = np.asarray(scores, dtype=float).reshape(-1)
+    order = np.argsort(-scores)
+    out: list[dict[str, Any]] = []
+    for rank, j in enumerate(order.tolist()):
+        row = dict(hits[int(j)])
+        row["base_score"] = float(row.get("score", 0.0))
+        row["rerank_score"] = float(scores[int(j)])
+        row["score"] = float(scores[int(j)])
+        row["rank"] = int(rank)
+        out.append(row)
+    return out
+
+
+def dedupe_hits_by_source(hits: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for h in hits:
+        src = str(h.get("source", "")).strip()
+        if not src:
+            out.append(h)
+            continue
+        if src in seen:
+            continue
+        seen.add(src)
+        out.append(h)
+    return out
+
+
 st.set_page_config(page_title="PDF RAG", layout="wide")
 st.title("PDF RAG (FAISS + Generator)")
 
@@ -158,6 +202,11 @@ with st.sidebar:
     st.subheader("Settings")
     language = st.selectbox("Answer language", ["English", "Français", "العربية"], index=0)
     top_k = st.slider("top_k", min_value=1, max_value=12, value=6, step=1)
+    use_reranker = st.checkbox("Use re-ranker (cross-encoder)", value=False)
+    candidate_k = st.slider("candidate_k", min_value=top_k, max_value=30, value=max(int(top_k), 10), step=1)
+    reranker_model = st.text_input("Re-ranker model", value="cross-encoder/ms-marco-MiniLM-L-6-v2")
+    filter_rerank = st.checkbox("Filter re-ranked hits by score", value=False)
+    min_rerank_score = st.number_input("Min re-rank score", value=-1.0, step=0.1, disabled=not bool(filter_rerank))
     temperature = st.slider("temperature", min_value=0.0, max_value=1.0, value=0.2, step=0.05)
     timeout_s = st.number_input("timeout (seconds)", min_value=30, max_value=600, value=300, step=10)
     github_model = st.text_input("GitHub model", value=GITHUB_MODEL_DEFAULT)
@@ -179,7 +228,19 @@ with tab_ask:
             st.warning("Type a question first.")
             st.stop()
         with st.spinner("Retrieving context..."):
-            contexts = retrieve(q, idx, meta, embed_model, top_k=int(top_k))
+            if bool(use_reranker):
+                ce = get_cross_encoder(reranker_model.strip())
+                base = retrieve(q, idx, meta, embed_model, top_k=int(candidate_k))
+                contexts = rerank_cross_encoder(q, base, ce)
+                if bool(filter_rerank):
+                    kept = [c for c in contexts if float(c.get("score", float("-inf"))) >= float(min_rerank_score)]
+                    contexts = kept if kept else contexts
+                contexts = dedupe_hits_by_source(contexts)
+                for r, c in enumerate(contexts):
+                    c["rank"] = int(r)
+                contexts = contexts[: int(top_k)]
+            else:
+                contexts = retrieve(q, idx, meta, embed_model, top_k=int(top_k))
         with st.spinner("Generating answer..."):
             token = get_github_token()
             if not token:
@@ -200,7 +261,12 @@ with tab_ask:
 
         st.subheader("Sources")
         for c in contexts:
-            st.write(f"- {c['source']} (page {c['page']}, score {c['score']:.3f})")
+            if "base_score" in c:
+                st.write(
+                    f"- {c['source']} (page {c['page']}, sim {float(c['base_score']):.3f}, rerank {float(c['score']):.3f})"
+                )
+            else:
+                st.write(f"- {c['source']} (page {c['page']}, score {c['score']:.3f})")
 
 
 def build_quiz_prompt(language: str, n_questions: int, difficulty: str, contexts: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -312,7 +378,12 @@ with tab_quiz:
 
         if topic.strip():
             quiz_query = f"Create a quiz about: {topic.strip()}"
-            base_contexts = retrieve(quiz_query, idx, meta, embed_model, top_k=max(8, int(top_k)))
+            if bool(use_reranker):
+                ce = get_cross_encoder(reranker_model.strip())
+                base = retrieve(quiz_query, idx, meta, embed_model, top_k=max(int(candidate_k), 8))
+                base_contexts = rerank_cross_encoder(quiz_query, base, ce)[: max(8, int(top_k))]
+            else:
+                base_contexts = retrieve(quiz_query, idx, meta, embed_model, top_k=max(8, int(top_k)))
         else:
             rng = np.random.default_rng(7)
             pool = [m for m in meta if m.get("chunk") and m.get("source")]
